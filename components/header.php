@@ -4,8 +4,8 @@
 	      <!-- mini logo for sidebar mini 50x50 pixels -->
 	      <span class="logo-mini"><b>U</b>GW</span>
 	      <!-- logo for regular state and mobile devices -->
-	      <span class="logo-lg" style="margin-top:10px;">
-	      	<img src="../../assets/img/log.png" class="img-responsive" />
+	      <span class="logo-lg" style="margin-top:0px;">
+	      	<img src="../../assets/img/logo.png" class="img-responsive" />
 	      </span>
 	    </a>    	
 	    <nav class="navbar navbar-static-top">	      
@@ -14,7 +14,7 @@
 	      </a>
 	      <ul class="nav navbar-nav navbar-left">
 	      	<li>
-	      		<a class="navbar-brand" href="#">UGW ANNUAL MAGAZINE</a>
+	      		<a class="navbar-brand" style="font-family:Adobe Arabic;" href="#">UNIVERSITY of GREENWICH ANNUAL MAGAZINE</a>
 	      		
 	      	</li>
 	      </ul>

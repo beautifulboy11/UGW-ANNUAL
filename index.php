@@ -6,22 +6,22 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>UGW-ANNUAL MAGAZINE</title>        
+        <title>University of Greenwich-ANNUAL MAGAZINE</title>        
         <link href="assets/plugins/bootstrap/bootstrap.css" rel="stylesheet" />
         <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
         <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico">   
     </head>
     <body class="body-Login-back">
         <div class="container">
-            <div class="row" style="margin-top:20px;">  
-                <div class="col-md-4"></div>            
-                <div class="col-md-4">
-                    <img src="assets/img/logo.png" alt="" class="img-responsive" width=""/>
-                </div>     
-                <div class="col-md-4"></div>                                 
+            <div class="row" style="margin-top:10px;">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-6">
+                    <img src="assets/img/banner1.png" alt="" class="img-responsive" />
+                </div> 
+                <div class="col-lg-3"></div>
             </div>
-            <div class="row" style="background-color:white; margin-top:30px; padding-bottom:50px;">
-                <div class="col-md-12"> 
+            <div class="row"style="margin-top:10px; padding-bottom:50px; background-color:#00338e; " >
+                <div class="col-md-12" style="margin-top:30px; padding-bottom:50px; background-color:#00338e; "> 
                     <div class="col-md-4"></div>           
                     <div class="col-md-4">
                         <div class="login-panel panel panel-default">                  
@@ -72,11 +72,11 @@
                 </div>
             </div>
             
-            <div class="row">             
-                <div  style="color:#000; margin-top:1px;">
+            <div class="row" style="background-color:#00338e; margin-top:10px;">             
+                <div  style="color:#fff; ">
                     <div class="text-center">
                         <strong>Copyright &copy;
-                            <?php echo date("Y");?>The UGW Annual Magazine.
+                            <?php echo date("Y");?>The University of Greenwich Annual Magazine.
                         </strong> All rights reserved
                     </div>
                 </div>

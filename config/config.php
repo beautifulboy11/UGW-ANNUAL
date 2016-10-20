@@ -1,6 +1,5 @@
 
 <?php
-
 	$_HOST = "localhost";
 	$_DBUSERNAME = "root";
 	$_DBPASSWORD = "";
@@ -13,4 +12,3 @@
 	if ($DB_CONNECTION->connect_error) {
 	    die("Connection failed: " . $DB_CONNECTION->connect_error);
 	} 
-?>

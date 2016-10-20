@@ -13,16 +13,8 @@ function Redirect($userlevel){
         header('location:../views/manager/index.php');
     }
 }
-
-function authenticate($username, $password) {
-    //include config file
-    require '../config/config.php';
-    //query
-    $query = "SELECT * FROM user WHERE username = '$username' AND password ='$password' ";
-    $results = $DB_CONNECTION->query($query);
-    //if the user does not exists check in student table
-    if ($results->num_rows == 0) {
-        $Sql = "SELECT * FROM ugw_student WHERE student_id = '$username' AND password='$password'";
+function AuthenticateStudent($username,$password,$DB_CONNECTION ){
+    $Sql = "SELECT * FROM ugw_student WHERE student_id = '$username' AND password='$password'";
         $results = $DB_CONNECTION->query($Sql);
         if ($results->num_rows == 0) {
             $_SESSION['login_failure'] = "failure";
@@ -37,6 +29,17 @@ function authenticate($username, $password) {
             }
             header('location:../views/student/index.php');
         }
+}
+
+function authenticate($username, $password) {
+    //include config file
+    require '../config/config.php';
+    //query
+    $query = "SELECT * FROM user WHERE username = '$username' AND password ='$password' ";
+    $results = $DB_CONNECTION->query($query);
+    //if the user does not exists check in student table
+    if ($results->num_rows == 0) {
+            AuthenticateStudent($username,$password,$DB_CONNECTION );
     } else {
         $_SESSION['username'] = $username; //when user record exits, read data from database
         while ($row = mysqli_fetch_array($results)) {
@@ -49,5 +52,3 @@ function authenticate($username, $password) {
     }
     $DB_CONNECTION->close();
 }
-
-?>
