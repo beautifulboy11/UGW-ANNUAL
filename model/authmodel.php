@@ -1,15 +1,16 @@
 <?php
 //start the session
 session_start();
-function Redirect($userlevel){
-    if ($userlevel == 0) {
-        $_SESSION['admin'] = $userlevel;
+function Redirect($Role){
+    if ($Role == 1) {
+        $_SESSION['admin'] = $Role;
+        
         header('location:../views/Admin/index.php');
-    } else if ($userlevel == 1) {
-        $_SESSION['coordinator'] = $userlevel;
+    } else if ($Role == 2) {
+        $_SESSION['coordinator'] = $Role;
         header('location:../views/coordinator/index.php');
-    } else if ($userlevel == 2) {
-        $_SESSION['manager'] = $userlevel;
+    } else if ($Role == 3) {
+        $_SESSION['manager'] = $Role;
         header('location:../views/manager/index.php');
     }
 }
@@ -33,20 +34,30 @@ function AuthenticateStudent($username,$password,$DB_CONNECTION ){
 
 function authenticate($username, $password) {
     //include config file
-    require '../config/config.php';
+    require '../config/config.php';    
     //query
-    $query = "SELECT * FROM user WHERE username = '$username' AND password ='$password' ";
-    $results = $DB_CONNECTION->query($query);
+    $query = "SELECT u.ID As username, u.name, ugm.group_id As role, ufm.faculty_id AS faculty FROM ugw_users AS u "
+            . "INNER JOIN ugw_user_usergroup_map AS ugm ON u.ID = ugm.user_id "
+            . "INNER JOIN ugw_user_faculty_map AS ufm ON u.ID = ugm.user_id "
+            . "WHERE u.ID = '".$username."' AND password ='".$password."' ";
+    
+    if(!$results = $DB_CONNECTION->query($query)){
+        echo " " . $query . "<br />" ."<span style='color:red;'>". $DB_CONNECTION->error;"</span>";
+        exit();  
+    }
+    
     //if the user does not exists check in student table
     if ($results->num_rows == 0) {
-            AuthenticateStudent($username,$password,$DB_CONNECTION );
+        
+        AuthenticateStudent($username,$password,$DB_CONNECTION );
     } else {
         $_SESSION['username'] = $username; //when user record exits, read data from database
-        while ($row = mysqli_fetch_array($results)) {
-            $userlevel = $row['userlevel'];
+        while ($row=$results->fetch_assoc()) {
+            $Role = $row['role'];
+            $Faculty = $row['faculty'];
             $_SESSION['name'] = $row['name'];
             //function that handles redirection
-            Redirect($userlevel);
+            Redirect($Role);
         }
         $results->free();
     }

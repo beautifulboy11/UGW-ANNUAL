@@ -13,6 +13,10 @@
 	    die("Connection failed: " . $DB_CONNECTION->connect_error);
 	} 
 	
-	$sql = "SELECT `id`, `student_id`, `title`, `date`, `filelocation` FROM `file_uploads` ";
-	$results = $DB_CONNECTION->query($sql);
+	$sql = "SELECT `id`, `post_author`, `post_title`, `post_date`, `filelocation` FROM `file_uploads` ";
+        
+        if(!$results = $DB_CONNECTION->query($sql)){
+            echo " " . $sql . "<br />" ."<span style='color:red;'>". $DB_CONNECTION->error;"</span>";
+            exit(); 
+        }
 ?>

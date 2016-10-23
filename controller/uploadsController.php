@@ -22,7 +22,9 @@
         
        //check file extension/ only images and document files are allowed
        if($fileType !="jpg" && $fileType !="png" && $fileType !="jpeg" && $fileType !="docx"){
-       echo 'Sorry, only JPEG, JPG, PNG and DOCX Files are allowed';
+       
+       $_SESSION['uploadStatus'] = $uploadStatus;
+       header("location:../views/student/index.php");
        $uploadStatus = 0;
        }
        if($uploadStatus == 0){
