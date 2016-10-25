@@ -56,6 +56,7 @@ function authenticate($username, $password) {
             $Role = $row['role'];
             $Faculty = $row['faculty'];
             $_SESSION['name'] = $row['name'];
+            $_SESSION['faculty']=$row['name'];
             //function that handles redirection
             Redirect($Role);
         }
