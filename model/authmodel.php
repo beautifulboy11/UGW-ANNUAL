@@ -10,13 +10,13 @@ function Redirect($Role){
         header('location:../views/manager/index.php');
     } else if ($Role == 3 AND $_SESSION['faculty'] == 1) {
         $_SESSION['coordinator'] = $Role;
-        header('location:../views/coordinator/index.php');
+        header('location:../views/coordinator/business.php');
     } else if ($Role == 3 AND $_SESSION['faculty'] == 2) {
         $_SESSION['coordinator'] = $Role;
-        header('location:../views/coordinator/index.php');
+        header('location:../views/coordinator/education.php');
     } else if ($Role == 3 && $_SESSION['faculty'] == 3) {
         $_SESSION['coordinator'] = $Role;
-        header('location:../views/coordinator/index.php');
+        header('location:../views/coordinator/science.php');
     }else if($Role == 4 ){
         $_SESSION['student'] = $Role;
         header('location:../views/student/index.php');
@@ -46,13 +46,10 @@ function authenticate($username, $password) {
             $Role = $row['role'];
             $Faculty = $row['faculty'];            
             $_SESSION['name'] = $row['name'];
-<<<<<<< HEAD
             //echo $Faculty;
-=======
             unset($_SESSION['faculty']);
             $_SESSION['faculty']=$row['faculty'];
            // echo $_SESSION['faculty'];
->>>>>>> 432ecfd237151a7ab5d752409e68622e748bd72e
             //function that handles redirection
             Redirect($Role);
         }
