@@ -71,10 +71,51 @@ if (isset($_SESSION['username'])) {
                                     <input name="fileupload"  value="Upload File" type="submit" class="btn btn-primary btn-lg active btn-sm"/>
                                 </div>
                             </form>
-                            <div class="">
+                            <div class="">                                
                                 <?php
-                                if (isset($_SESSION['agree'])) {
-                                    echo 'Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy';
+                                if (isset($_SESSION['format']))
+                                {
+                                    echo '<div class="alert alert-danger alert-dismissible" role="alert">'
+                                    . '<button type="button" class="close" data-dismiss="alert" aria-label="Close">'
+                                            . '<span aria-hidden="true">&times;</span></button>'
+                                    . 'Sorry, only .img, .jpeg, .jpg, .png and .docx file cab be uploaded!!'
+                                    . '</div> ';
+                                    unset($_SESSION['format']);
+                                         
+                                }
+                                elseif (isset($_SESSION['size']))
+                                {
+                                    echo '<div class="alert alert-danger alert-dismissible" role="alert">'
+                                    . '<button type="button" class="close" data-dismiss="alert" aria-label="Close">'
+                                            . '<span aria-hidden="true">&times;</span></button>'
+                                    . ' file is too large!!! '
+                                    . '</div>';
+                                    unset($_SESSION['size']);
+                                }
+                                elseif (isset($_SESSION['exits']))
+                                {
+                                    echo '<div class="alert alert-danger alert-dismissible" role="alert">'
+                                    . '<button type="button" class="close" data-dismiss="alert" aria-label="Close">'
+                                            . '<span aria-hidden="true">&times;</span></button>'
+                                    . ' Sorry, file already exits'
+                                    . '</div>';
+                                    unset($_SESSION['exits']);
+                                } 
+                                elseif (isset($_SESSION['success']))
+                                {
+                                    echo '<div class="alert alert-danger alert-dismissible" role="alert">'
+                                    . '<button type="button" class="close" data-dismiss="alert" aria-label="Close">'
+                                            . '<span aria-hidden="true">&times;</span></button>'
+                                    . 'File Uploaded successfully'
+                                    . '</div>';
+                                    unset($_SESSION['success']);
+                                }
+                                elseif (isset($_SESSION['agree'])) {
+                                    echo '<div class="alert alert-info alert-dismissible" role="alert">'
+                                    . '<button type="button" class="close" data-dismiss="alert" aria-label="Close">'
+                                            . '<span aria-hidden="true">&times;</span></button>'
+                                    . 'Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy '
+                                    . '</div>';
                                     unset($_SESSION['agree']);
                                 }
                                 ?>
