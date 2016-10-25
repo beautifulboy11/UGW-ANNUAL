@@ -22,10 +22,10 @@
         
        //check file extension/ only images and document files are allowed
        if($fileType !="jpg" && $fileType !="png" && $fileType !="jpeg" && $fileType !="docx"){
-       
-       $_SESSION['uploadStatus'] = $uploadStatus;
-       header("location:../views/student/index.php");
        $uploadStatus = 0;
+       $_SESSION['uploadStatus'] = 'failure';
+       //header("location:../views/student/index.php");
+       
        }
        if($uploadStatus == 0){
            echo 'Sorry, your file was not uploaded';
