@@ -46,13 +46,6 @@ function authenticate($username, $password) {
             $Role = $row['role'];
             $Faculty = $row['faculty'];            
             $_SESSION['name'] = $row['name'];
-<<<<<<< HEAD
-            //echo $Faculty;
-=======
-            unset($_SESSION['faculty']);
-            $_SESSION['faculty']=$row['faculty'];
-           // echo $_SESSION['faculty'];
->>>>>>> 432ecfd237151a7ab5d752409e68622e748bd72e
             //function that handles redirection
             Redirect($Role);
         }

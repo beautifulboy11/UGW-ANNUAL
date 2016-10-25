@@ -1,5 +1,4 @@
 <?php
-
         //check existance of uploads directory,if does not exist, make one
         if (!is_dir('../uploads'))
         {
@@ -47,32 +46,35 @@
             //display appropriate error message
             switch ($uploadStatus){
                 case 0:
-                    echo ' Sorry, only .img, .jpeg, .jpg, .png and .docx file cab be uploaded ';
+                    //echo ' Sorry, only .img, .jpeg, .jpg, .png and .docx file cab be uploaded ';
                     $_SESSION['format'] = 'failure';
+                    header("location:../views/student/index.php");
                     break;
                 case -1:
-                    echo ' file is too large ';
+                    //echo ' file is too large ';
                     $_SESSION['size']= 'failure';
+                    header("location:../views/student/index.php");
                     break;
                 case -2:
-                    echo ' Sorry, file already exits ';
-                    $_SESSION['exits']= 'failure';
+                    //echo ' Sorry, file already exits ';
+                    $_SESSION['exits']= 'failure';                    
+                    header("location:../views/student/index.php");
                     break;
                 case 1:
                     if (move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $target_file)) 
                     {
                         saveData($target_file);
-                        echo 'File Uploaded successfully';
-                        $_SESSION['exits']= 'failure';
-                        //header("location:../views/student/index.php");
+                        //echo 'File Uploaded successfully';
+                        $_SESSION['success']= 'success';
+                        header("location:../views/student/index.php");
                     }
                     else
                     {
                         if (copy($_FILES['uploadedfile']['tmp_name'], $target_file)) {
                         saveData($target_file);
-                        echo 'File Copied successfully';
-                        $_SESSION['exits']= 'failure';
-                        //header("location:../views/student/index.php");
+                        //echo 'File Uploaded successfully';
+                        $_SESSION['success']= 'success';
+                        header("location:../views/student/index.php");
                     } else {
                         throw new Exception('Try again later');
                     }
