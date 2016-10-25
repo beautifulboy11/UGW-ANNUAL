@@ -21,8 +21,8 @@ function authenticate($username, $password) {
     require '../config/config.php';        
     $query = "SELECT u.ID As username, u.name, ugm.group_id As role, ufm.faculty_id AS faculty FROM ugw_users AS u "
             . "INNER JOIN ugw_user_usergroup_map AS ugm ON u.ID = ugm.user_id "
-            . "INNER JOIN ugw_user_faculty_map AS ufm ON u.ID = ugm.user_id "
-            . "WHERE u.ID = '".$username."' AND password ='".$password."' ";    
+            . "INNER JOIN ugw_user_faculty_map AS ufm ON ufm.user_id = u.ID "
+            . "WHERE ufm.user_id = '".$username."' AND password ='".$password."' ";    
     //if something is wrong with query, throw Exception
     if(!$results = $DB_CONNECTION->query($query)){
         echo " " . $query . "<br />" ."<span style='color:red;'>". $DB_CONNECTION->error;"</span>";
@@ -40,6 +40,7 @@ function authenticate($username, $password) {
             $Role = $row['role'];
             $Faculty = $row['faculty'];            
             $_SESSION['name'] = $row['name'];
+            //echo $Faculty;
             //function that handles redirection
             Redirect($Role);
         }
