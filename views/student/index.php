@@ -23,15 +23,17 @@ if (isset($_SESSION['username'])) {
                 }
             </style>
             <script type="text/javascript">
-                function refresh() {
-                    if (new Date().getTime() - time >= 60000)
-                        window.location.reload(true);
-                    else
-                        setTimeout(refresh, 10000);
+                function Agree(){
+                    if(document.getElementById('agree').checked){
+                        return true; 
+                    } else {
+                        alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy');                        
+                    }
+                    return false;
                 }
-
-                setTimeout(refresh, 10000);
             </script>
+                
+            
         </head>
         <body class="hold-transition skin-blue">
             <div class="wrapper">
@@ -46,92 +48,111 @@ if (isset($_SESSION['username'])) {
                         </ol>
                     </section>
                     <div class="col-md-12" style="background-color:#fff;">
-                        <!--first col-->
-                        <div class="col-md-4" style="margin-top:30px;">
-                            <div class="col-md-12">
-                                <form enctype="multipart/form-data" action="../../controller/uploadsController.php" method="POST"  >
-                                    <input type="text" name="title" placeholder="Title" class="form-control" required="true">
-                                    Choose the file to upload
-                                    <div class="input-group">
-                                        <span class="input-group-addon">
-                                            <i class="fa fa-upload"></i>
-                                        </span>
-                                        <input class="form-control" type="file" name="uploadedfile"/>
+                    <!--first col-->
+                    <div class="col-md-4" style="margin-top:30px;">
+                        <div class="col-md-12">
+                            <form enctype="multipart/form-data" action="../../controller/uploadsController.php" method="POST" onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy'); return false; }">
+                                <input type="text" name="title" placeholder="Title" class="form-control" required="true" />
+                                <br/>
+                                Choose the file to upload
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="fa fa-upload"></i>
+                                    </span>
+                                    <input class="form-control" type="file" name="uploadedfile" required="true"/>
+                                </div>
+                                <div>
+                                    <div style="margin-top:20px;">
+                                        <input type="checkbox" name="checkbox" value="check" id="agree" />
+                                        I have read and agree to the <a href="#">Terms and Conditions</a> and Privacy Policy                                               
                                     </div>
-                                    <br/>
+                                </div>
+                                <div  class="input-group" style="margin-top:20px;">
                                     <input name="fileupload"  value="Upload File" type="submit" class="btn btn-primary btn-lg active btn-sm"/>
-                                </form>
+                                </div>
+                            </form>
+                            <div class="">
                                 <?php
-                                if(isset($_SESSION['$uploadStatus'])){
-                                    echo 'FAILURE';
-                                    unset($_SESSION['$uploadStatus']);
+                                if (isset($_SESSION['agree'])) {
+                                    echo 'Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy';
+                                    unset($_SESSION['agree']);
                                 }
                                 ?>
                             </div>
                         </div>
-                        <!--/first col-->
-                        <!--second col-->
-                        <div class="col-md-8"  style="background-color:#fff; margin-top:30px;">
-    <?php include_once('../../model/articleLoader.php'); ?>
-                            <section class="content">
-                                <div class="row">                     
-                                    <table id="article_table" class="table table-bordered table-hover">
-                                        <thead>
-                                            <tr>
-                                                <th>Article Title</th>
-                                                <th>Date Submitted(s)</th>
-                                                <th>Comment</th>
-                                                
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php
-                                            while ($row = $results->fetch_assoc()) {
-                                                ?>
-                                                <tr>
-                                                    <td>
-        <?php echo $row['post_title']; ?>
-                                                    </td>
-
-                                                    <td><?php echo $row['post_date']; ?></td>
-                                                    <td> </td>
-                                                    
-                                                </tr>
-
-                                                <?php
-                                            }
-                                            ?>
-                                        </tbody>
-
-                                    </table>
-                                </div>		         
-                            </section>
-                        </div>
-                        <!--/second col-->
                     </div>
+                    <!--/first col-->
+                    <!--second col-->
+                    <div class="col-md-8"  style="background-color:#fff; margin-top:30px;">                        
+                        <section class="content">
+                            <div class="row">                     
+                                <table id="article_table" class="table table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Article Title</th>
+                                            <th>Date Submitted(s)</th>
+                                            <th>Comment</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>                                            
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td> </td>                                                    
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="message" hidden="hidden">
+                                <label id="errorlbl" class="control-label"><label>
+                                        </div>
+                                        </section>
+                                        </div>
+                                        <!--/second col-->
+                                        </div>
+                                        </div>  
+                                        <footer class="main-footer"style="margin-left:0px;">
+                                            <?php
+                                            include '../../components/footer.php';
+                                            ?>
+                                        </footer>
+                                        </div>
+                                        </body>
+                                        <script type="text/javascript" src="../../assets/plugins/jquery-1.10.2.js"></script>
+                                        <script src="../../assets/plugins/bootstrap/bootstrap.min.js"></script>
+                                        <script src="../../assets/scripts/app.min.js"></script>
+                                        <script src="../../assets/plugins/dataTables/jquery.dataTables.js"></script>
+                                        <script src="../../assets/plugins/dataTables/dataTables.bootstrap.css"></script>
+                                        <script type="text/javascript">
+                $(document).ready(function () {
+                    $.ajax({
+                        type: "POST",
+                        dataType: "json",
+                        url: "../../model/articleLoader.php?student=" +<?php echo $_SESSION['username']; ?>,
+                        success: function (data) {
+                            $('#article_table').DataTable({
+                                data: data,
 
-                </div>  
-                <footer class="main-footer"style="margin-left:0px;">
-                    <?php
-                    include '../../components/footer.php';
-                    ?>
-                </footer>
-            </div>
-        </body>
-        <script type="text/javascript" src="../../assets/plugins/jquery-1.10.2.js"></script>
+                                columns: [
 
-        <script src="../../assets/plugins/bootstrap/bootstrap.min.js"></script>
-        <script src="../../assets/scripts/app.min.js"></script>
-        <script src="../../assets/plugins/dataTables/jquery.dataTables.js"></script>
-        <script src="../../assets/plugins/dataTables/dataTables.bootstrap.css"></script>
-        <script>
-                    $(function () {
-                        $("#article_table").DataTable();
+                                    {'data': 'title'},
+                                    {'data': 'date'},
+                                    {'data': 'comment'},
+                                ]
+                            });
+                        },
+                        error: function (returnval) {
+                            $(".message").text(returnval + " failure");
+                            $(".message").fadeIn("slow");
+                            $(".message").delay(2000).fadeOut(1000);
+                        }
+
                     });
-        </script>
-    </html>
-    <?php
-} else {
-    header('location: ../../index.php');
-}
-?>
+                });
+                                        </script>      
+                                        </html>
+                                        <?php
+                                    } else {
+                                        header('location: ../../index.php');
+                                    }
+                                    ?>
