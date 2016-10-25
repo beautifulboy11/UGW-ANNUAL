@@ -103,7 +103,7 @@ if (isset($_SESSION['username'])) {
                                 } 
                                 elseif (isset($_SESSION['success']))
                                 {
-                                    echo '<div class="alert alert-danger alert-dismissible" role="alert">'
+                                    echo '<div class="alert alert-success alert-dismissible" role="alert">'
                                     . '<button type="button" class="close" data-dismiss="alert" aria-label="Close">'
                                             . '<span aria-hidden="true">&times;</span></button>'
                                     . 'File Uploaded successfully'
@@ -143,6 +143,7 @@ if (isset($_SESSION['username'])) {
                                         </tr>
                                     </tbody>
                                 </table>
+                                <p style="margin-top:10px;">*Note: Only articles commented on will display a comment.</p>
                             </div>
                             <div class="message" hidden="hidden">
                                 <label id="errorlbl" class="control-label"><label>
