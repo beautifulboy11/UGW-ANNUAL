@@ -61,6 +61,12 @@ if (isset($_SESSION['username'])) {
                                     <br/>
                                     <input name="fileupload"  value="Upload File" type="submit" class="btn btn-primary btn-lg active btn-sm"/>
                                 </form>
+                                <?php
+                                if(isset($_SESSION['$uploadStatus'])){
+                                    echo 'FAILURE';
+                                    unset($_SESSION['$uploadStatus']);
+                                }
+                                ?>
                             </div>
                         </div>
                         <!--/first col-->
