@@ -26,108 +26,10 @@ if (isset($_SESSION['username'])) {
             <!--  wrapper -->
             <div class="wrapper">
                 <!-- navbar top -->
-                <header class="main-header">    
-                    <a href="#" class="logo">
-                        <!-- mini logo for sidebar mini 50x50 pixels -->
-                        <span class="logo-mini"><b>U</b>GW</span>
-                        <!-- logo for regular state and mobile devices -->
-                        <span class="logo-lg" style="margin-top:0px;">
-                            <img src="../../../assets/img/logo.png" class="img-responsive" />
-                        </span>
-                    </a>    	
-                    <nav class="navbar navbar-static-top">	      
-                        <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-                            <span class="sr-only">Toggle navigation</span>
-                        </a>
-                        <ul class="nav navbar-nav navbar-left">
-                            <li>
-                                <a class="navbar-brand" style="font-family:Adobe Arabic;" href="#">UNIVERSITY of GREENWICH ANNUAL MAGAZINE</a>
-
-                            </li>
-                        </ul>
-                        <!-- User Account: style can be found in dropdown.less -->
-                        <div class="navbar-custom-menu">
-                            <ul class="nav navbar-nav">
-
-                                <li class="dropdown user user-menu">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                        <i class="glyphicon glyphicon-user"></i>
-                                        <span class="hidden-xs"><?php echo $_SESSION['name']?></span>
-                                    </a>
-                                    <ul class="dropdown-menu">              
-                                        <li class="user-body">
-                                            <div class="pull-left">
-                                                <a href="#" class="btn btn-default btn-flat">Profile</a>
-                                            </div>
-                                            <div class="pull-right">
-                                                <a href="../../../index.php" class="btn btn-default btn-flat">Sign out</a>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                </header>
+                <?php include'components/header.php';?>
                 <!-- end navbar top -->
                 <!-- navbar side -->
-                <aside class="main-sidebar" >
-                    <section class="sidebar">	      
-                        <div class="user-panel">
-                            <div style="margin-left:10px;"class="pull-left image">
-                                <img src="../../../assets/img/boxed-bg.jpg" class="img-circle" alt="User Image">
-                            </div>
-                            <div class="pull-left info">
-                                <p></p>
-                                <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-                            </div>
-                        </div>
-
-                        <ul class="sidebar-menu">
-                            <li class="header">MAIN NAVIGATION</li>
-                            <li class="active treeview">
-                                <a href="../index.php">
-                                    <i class="fa fa-home"></i> <span>Home</span> <i class="fa fa-angle-left pull-right"></i>
-                                </a>	          
-                            </li>	        	       
-                            <li class="treeview">
-                                <a href="#">
-                                    <i class="fa fa-user"></i>
-                                    <span>User Accounts</span>
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </a>
-                                <ul class="treeview-menu">
-                                    <li>
-                                        <a href="../manageStudents.php">
-                                            <i class="fa fa-circle-o text-aqua"></i>
-                                            <span>Student Accounts</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="../manageStaff.php">
-                                            <i class="fa fa-circle-o text-aqua"></i>
-                                            <span>Staff Accounts</span>
-                                        </a>
-                                    </li>
-
-
-                                </ul>
-                            </li>
-                            <li class="">
-                                <a href="#">
-                                    <i class="fa fa-gears"></i>
-                                    <span>Date Settings</span>		            			
-                                </a>
-                                <ul class="treeview-menu">
-                                    <li></li>
-                                    <li></li>					          
-                                </ul>
-                            </li>
-                        </ul>
-
-                    </section>
-
-                </aside>?>
+               <?php include'components/sidebar.php';?>
                 <!-- end navbar side -->
                 <!--  page-wrapper -->
                 <div class="content-wrapper" style=" background-color:white;">        
@@ -135,7 +37,7 @@ if (isset($_SESSION['username'])) {
                         <!--  page header -->
                         <section class="content-header">
                             <h1 class="page-header text-center">Profile Mangement</h1>
-                        </section>>
+                        </section>
                         <!-- end  page header -->
                     
                     <?php include_once('../../../model/StaffRecord.php'); ?>

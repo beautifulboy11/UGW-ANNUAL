@@ -39,12 +39,16 @@
                 </ul>
             </li>
             <li class="">
-                <a href="#">
+                <a>
                     <i class="fa fa-gears"></i>
                     <span>Date Settings</span>		            			
                 </a>
                 <ul class="treeview-menu">
-                    <li></li>
+                    <li><a href="setDate.php">
+                            <i class="glyphicon glyphicon-cog"></i>
+                            Set Dates
+                        </a>
+                    </li>
                     <li></li>					          
                 </ul>
             </li>
