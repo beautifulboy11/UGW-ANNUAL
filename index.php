@@ -86,3 +86,5 @@
         <script src="assets/plugins/bootstrap/bootstrap.min.js"></script>    
     </body>
 </html>
+<?php
+?>

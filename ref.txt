@@ -1,1 +1,9 @@
+Input FileUpload files Property
 www.w3schools.com/php/php_file_upload.asp
+TechnicalKeeda.com
+Password and confirm password validation in jquery
+url: http://www.technicalkeeda.com/jquery/password-and-confirm-password-validation-in-jquery
+TermsFeed
+Add "I agree to terms" checkbox
+=Form validate https://jqueryvalidation.org/
+

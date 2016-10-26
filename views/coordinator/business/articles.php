@@ -3,12 +3,12 @@ if(isset($_SESSION['username'])){
 ?>
 <html>
 	<head>
-		<title>Student Home</title>
+		<title>University of Greenwich-ANNUAL MAGAZINE</title>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-		<link rel="icon" href="../../favico.png">		
-		<meta name="" content="annual magazine">		
+		<link rel="icon" href="../../../favicon.ico">		
+		<meta name="" content="annual magazine">		        
 		<link href="../../../assets/css/AdminLTE.min.css" rel="stylesheet">
 		<link href="../../../assets/css/skins/_all-skins.css" rel="stylesheet">
 		<link href="../../../assets/plugins/bootstrap/bootstrap.min.css" rel="stylesheet">
@@ -22,8 +22,8 @@ if(isset($_SESSION['username'])){
 	</head>
 	<body class="hold-transition skin-blue sidebar-mini">
 		<div class="wrapper">
-			<?php include'../../../components/header.php';?>   
-			<?php include'../../../components/sidebar.php';?>
+			<?php include'../components/header.php';?>   
+			<?php include'../components/sidebar.php';?>
 			<div class="content-wrapper">	    
 			    <section class="content-header">
 			      <h1> Articles <small>Control Panel</small></h1>
@@ -55,7 +55,7 @@ if(isset($_SESSION['username'])){
 								</table>
 								<p style="margin-top:10px;">*Note: Only articles commented on will display a comment.</p>
 							</div>
-							<div class="message" hidden="hidden">
+                                                    <div class="message" hidden="hidden" style="color:red; font-weight: bold;">
 								<label id="errorlbl" class="control-label"></label>
 							</div>
 						</section>
@@ -96,7 +96,7 @@ if(isset($_SESSION['username'])){
             error: function (returnval) {
                 $(".message").text(returnval + " failure");
                 $(".message").fadeIn("slow");
-                $(".message").delay(2000).fadeOut(1000);
+                $(".message").delay(2000).fadeOut(10000);
             }
 
         });

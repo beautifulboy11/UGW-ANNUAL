@@ -4,9 +4,8 @@
 </div>
 <div  style="color:#000; margin-top:1px;">
     <div>
-        <strong>Copyright &copy; -
-            <?php echo date("Y"); ?>
-            The UGW Annual Magazine.
+        <strong>Copyright &copy; -'
+            <?php echo date("Y"); ?>The UGW Annual Magazine.
         </strong> All rights reserved
     </div>
 </div>

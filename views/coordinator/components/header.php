@@ -4,7 +4,7 @@
         <span class="logo-mini"><b>U</b>GW</span>
         <!-- logo for regular state and mobile devices -->
         <span class="logo-lg" style="margin-top:0px;">
-            <img src="../../assets/img/logo.png" class="img-responsive" />
+            <img src="../../../assets/img/logo.png" class="img-responsive" />
         </span>
     </a>    	
     <nav class="navbar navbar-static-top">	      

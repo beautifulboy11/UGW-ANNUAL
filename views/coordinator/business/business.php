@@ -3,11 +3,11 @@ if(isset($_SESSION['username'])){
 ?>
 <html>
 <head>
-	<title>Student Home</title>
+	<title>University of Greenwich-ANNUAL MAGAZINE</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-	<link rel="icon" href="../../favico.png">		
+	<link rel="icon" href="../../../favicon.ico">		
 	<meta name="" content="annual magazine">		
 	<link href="../../../assets/css/AdminLTE.min.css" rel="stylesheet">
 	<link href="../../../assets/css/skins/_all-skins.css" rel="stylesheet">
@@ -22,8 +22,8 @@ if(isset($_SESSION['username'])){
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 	<div class="wrapper">
-		<?php include'../../../components/header.php';?>   
-		<?php include'../../../components/sidebar.php';?>  		 
+		<?php include'../components/header.php';?>   
+		<?php include'../components/sidebar.php';?>  		 
 		<div class="content-wrapper">	    
 		    <section class="content-header">
 		      <h1> Dashboard <small>Control panel</small></h1>
@@ -64,15 +64,16 @@ if(isset($_SESSION['username'])){
 	  	</div>  
 	  	<footer class="main-footer">
 	    	<?php 
-	    		include '../../components/footer.php';
+	    		include '../components/footer.php';
 	    	?>
 	  	</footer>
   	</div>
 </body>
-<script type="text/javascript" src="../../assets/plugins/jquery-1.10.2.js"></script>
-
-<script src="../../assets/plugins/bootstrap/bootstrap.min.js"></script>
-<script src="../../assets/scripts/app.min.js"></script>
+<script src="../../../assets/plugins/jquery-1.10.2.js" type="text/javascript"></script>
+<script src="../../../assets/plugins/dataTables/jquery.dataTables.js" type="text/javascript"></script>
+<script src="../../../assets/plugins/dataTables/dataTables.bootstrap.min.js" type="text/javascript"></script>
+<script src="../../../assets/plugins/bootstrap/bootstrap.min.js" type="text/javascript"></script>
+<script src="../../../assets/scripts/app.js" type="text/javascript"></script>
 </html>
 <?php
 }else{
