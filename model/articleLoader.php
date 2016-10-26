@@ -28,7 +28,12 @@
         
         $data = array();
          while($row=$results->fetch_assoc()){
-             $data []=$row;
+            //$data []=$row;
+             $data [] = array(
+                 'title'=>$row['title'],
+                 'date'=>$row['date'],
+                 'comment'=>$row['comment'],                 
+             );
          }
          
         header('Content-type: application/json');

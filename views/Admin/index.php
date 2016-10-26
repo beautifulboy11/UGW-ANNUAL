@@ -28,8 +28,8 @@ if (isset($_SESSION['username']) && isset($_SESSION['admin'])) {
         <body class="hold-transition skin-blue sidebar-mini" >
 
             <div class="wrapper">
-                <?php include'../../components/header.php'; ?>   
-                <?php include'../../components/sidebar.php'; ?>  		 
+                <?php include'components/header.php'; ?>   
+                <?php include'components/sidebar.php'; ?>  		 
                 <div class="content-wrapper">	    
                     <section class="content-header">
                         <h1> Administrator <small>Control panel</small></h1>

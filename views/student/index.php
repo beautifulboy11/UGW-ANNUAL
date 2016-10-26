@@ -132,14 +132,14 @@ if (isset($_SESSION['username'])) {
                                         <tr>
                                             <th>Article Title</th>
                                             <th>Date Submitted(s)</th>
-                                            <th>Comment</th>
+                                            <th>Comment</th>                                           
                                         </tr>
                                     </thead>
                                     <tbody>                                            
                                         <tr>
                                             <td></td>
                                             <td></td>
-                                            <td> </td>                                                    
+                                            <td></td>                                           
                                         </tr>
                                     </tbody>
                                 </table>
@@ -174,12 +174,12 @@ if (isset($_SESSION['username'])) {
                         success: function (data) {
                             $('#article_table').DataTable({
                                 data: data,
-
                                 columns: [
 
                                     {'data': 'title'},
                                     {'data': 'date'},
                                     {'data': 'comment'},
+                                   
                                 ]
                             });
                         },
@@ -191,10 +191,10 @@ if (isset($_SESSION['username'])) {
 
                     });
                 });
-                                        </script>      
-                                        </html>
-                                        <?php
-                                    } else {
-                                        header('location: ../../index.php');
-                                    }
-                                    ?>
+            </script>      
+            </html>
+            <?php
+        } else {
+            header('location: ../../index.php');
+        }
+        ?>
