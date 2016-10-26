@@ -139,11 +139,7 @@ if (isset($_SESSION['username'])) {
                                         <tr>
                                             <td></td>
                                             <td></td>
-<<<<<<< HEAD
-                                            <td></td>                                                    
-=======
-                                            <td></td>                                           
->>>>>>> 3ba908f1fe29765b62e8c03d7debedc21aa9bca6
+                                            <td></td>
                                         </tr>
                                     </tbody>
                                 </table>
