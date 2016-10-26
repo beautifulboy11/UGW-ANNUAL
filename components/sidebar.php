@@ -74,20 +74,10 @@ if (isset($_SESSION['admin'])) {
 		            			<li></li>
 		          			</ul>
 		        		</li>
-		        		<li class="treeview">
+		        		<li>
 		          			<a href="#">
-		            			<i class="fa fa-laptop"></i>
-		            			<span></span>
-		            			<i class="fa fa-angle-left pull-right"></i>
+		            			<i class="fa fa-laptop"></i><span>Articles</span>
 		          			</a>
-			          		<ul class="treeview-menu">
-					            <li></li>
-					            <li></li>
-					            <li></li>
-					            <li></li>
-					            <li></li>
-					            <li></li>
-			         		 </ul>
 		        		</li>
 				        <li class="treeview">
 				          <a href="#">

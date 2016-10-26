@@ -9,11 +9,11 @@ if(isset($_SESSION['username'])){
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 	<link rel="icon" href="../../favico.png">		
 	<meta name="" content="annual magazine">		
-	<link href="../../assets/css/AdminLTE.min.css" rel="stylesheet">
-	<link href="../../assets/css/skins/_all-skins.css" rel="stylesheet">
-	<link href="../../assets/plugins/bootstrap/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="../../assets/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="../../assets/ionicons/css/ionicons.min.css">			 
+	<link href="../../../assets/css/AdminLTE.min.css" rel="stylesheet">
+	<link href="../../../assets/css/skins/_all-skins.css" rel="stylesheet">
+	<link href="../../../assets/plugins/bootstrap/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="../../../assets/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../../../assets/ionicons/css/ionicons.min.css">			 
 	<style type="text/css">
 		body{
 			overflow:initial;
@@ -22,8 +22,8 @@ if(isset($_SESSION['username'])){
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 	<div class="wrapper">
-		<?php include'../../components/header.php';?>   
-		<?php include'../../components/sidebar.php';?>  		 
+		<?php include'../../../components/header.php';?>   
+		<?php include'../../../components/sidebar.php';?>  		 
 		<div class="content-wrapper">	    
 		    <section class="content-header">
 		      <h1> Dashboard <small>Control panel</small></h1>
@@ -34,7 +34,27 @@ if(isset($_SESSION['username'])){
 		    </section>
 	    
 		    <section class="content">
-		      <div class="row">                     
+		      <div class="row">
+		      <table class="table-responsive table table-striped table-hover">
+				  <thead>
+				    <tr>
+				      <th>#</th>
+				      <th>Title</th>
+				      <th>Student</th>
+				      <th>Status</th>
+				      <th>Actions</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				    <tr>
+				      <th scope="row">1</th>
+				      <td>Mark</td>
+				      <td>Otto</td>
+				      <td>@mdo</td>
+				      <td><button>Comment</button></td>
+				    </tr>
+				  </tbody>
+				</table>                     
 		      </div>
 		      <div class="row">        
 		        <section class="col-lg-7 connectedSortable">       
