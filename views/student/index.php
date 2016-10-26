@@ -103,7 +103,7 @@ if (isset($_SESSION['username'])) {
                                 } 
                                 elseif (isset($_SESSION['success']))
                                 {
-                                    echo '<div class="alert alert-danger alert-dismissible" role="alert">'
+                                    echo '<div class="alert alert-success alert-dismissible" role="alert">'
                                     . '<button type="button" class="close" data-dismiss="alert" aria-label="Close">'
                                             . '<span aria-hidden="true">&times;</span></button>'
                                     . 'File Uploaded successfully'
@@ -132,17 +132,22 @@ if (isset($_SESSION['username'])) {
                                         <tr>
                                             <th>Article Title</th>
                                             <th>Date Submitted(s)</th>
-                                            <th>Comment</th>
+                                            <th>Comment</th>                                           
                                         </tr>
                                     </thead>
                                     <tbody>                                            
                                         <tr>
                                             <td></td>
                                             <td></td>
+<<<<<<< HEAD
                                             <td></td>                                                    
+=======
+                                            <td></td>                                           
+>>>>>>> 3ba908f1fe29765b62e8c03d7debedc21aa9bca6
                                         </tr>
                                     </tbody>
                                 </table>
+                                <p style="margin-top:10px;">*Note: Only articles commented on will display a comment.</p>
                             </div>
                             <div class="message" hidden="hidden">
                                 <label id="errorlbl" class="control-label"><label>
@@ -173,12 +178,12 @@ if (isset($_SESSION['username'])) {
                         success: function (data) {
                             $('#article_table').DataTable({
                                 data: data,
-
                                 columns: [
 
                                     {'data': 'title'},
                                     {'data': 'date'},
                                     {'data': 'comment'},
+                                   
                                 ]
                             });
                         },
@@ -190,10 +195,10 @@ if (isset($_SESSION['username'])) {
 
                     });
                 });
-                                        </script>      
-                                        </html>
-                                        <?php
-                                    } else {
-                                        header('location: ../../index.php');
-                                    }
-                                    ?>
+            </script>      
+            </html>
+            <?php
+        } else {
+            header('location: ../../index.php');
+        }
+        ?>

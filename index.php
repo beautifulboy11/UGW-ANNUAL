@@ -1,6 +1,7 @@
 <?php
   session_start();
 ?>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -47,7 +48,7 @@
                                 </form>
                             </div>
                             <div class="panel-footer">
-                                <a href="#" class="pull-left">Sign Up</a>
+                                <a href="views/registration/index.php" class="pull-left">Sign Up</a>
                                 <a href="#" class="pull-right">Forgot your password?</a>
                                 <br />
                                 <?php

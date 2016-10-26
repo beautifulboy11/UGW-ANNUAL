@@ -13,18 +13,27 @@
 	    die("Connection failed: " . $DB_CONNECTION->connect_error);
 	} 
 	
-	$sql = "SELECT fu.id, fu.post_author AS author, fu.post_title AS title, fu.post_date AS date, fu.filelocation, fu.post_status AS status, fu.comment_status,uc.comment "
+	$sql = "SELECT fu.id, fu.post_author AS author, fu.post_title AS title, fu.post_date AS date, "
+                . "fu.filelocation, fu.post_status AS status, fu.comment_status,uc.comment "
                 . "FROM file_uploads AS fu "
-                . "INNER JOIN ugw_comments AS uc ON fu.id = uc.comment_post_ID "
-                . "WHERE fu.post_author = '".$_REQUEST['student']."'";
+                . "LEFT JOIN ugw_comments AS uc ON fu.id = uc.comment_post_ID "
+                . "WHERE fu.post_author = '".$_REQUEST['student']."' ORDER BY date DESC";
         
         if(!$results = $DB_CONNECTION->query($sql)){
             echo " " . $sql . "<br />" ."<span style='color:red;'>". $DB_CONNECTION->error;"</span>";
             exit(); 
         }
+        //show articles without
+        
+        
         $data = array();
          while($row=$results->fetch_assoc()){
-             $data []=$row;
+            //$data []=$row;
+             $data [] = array(
+                 'title'=>$row['title'],
+                 'date'=>$row['date'],
+                 'comment'=>$row['comment'],                 
+             );
          }
          
         header('Content-type: application/json');
