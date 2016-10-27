@@ -10,7 +10,7 @@ function Redirect($Role){
         header('location:../views/manager/index.php');
     } else if ($Role == 3 AND $_SESSION['faculty'] == 1) {
         $_SESSION['coordinator'] = $Role;
-        $_SESSION['faculty']= $faculty;
+        //$_SESSION['faculty']= $faculty;
         //getFacultyArticles($Role, $faculty);
         header('location:../views/coordinator/business/business.php');
     } else if ($Role == 3 AND $_SESSION['faculty'] == 2) {
@@ -45,10 +45,9 @@ function authenticate($username, $password) {
         $_SESSION['username'] = $username;
         
         while ($row=$results->fetch_assoc()) {
-            $Role = $row['role'];
-            //$Faculty = $row['faculty'];            
+            $Role = $row['role'];            
             $_SESSION['name'] = $row['name'];
-            echo $_SESSION['faculty']=$row['faculty'];
+            $_SESSION['faculty']=$row['faculty'];
             //function that handles redirection
             Redirect($Role);
         }

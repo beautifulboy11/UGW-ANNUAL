@@ -1,5 +1,6 @@
 <?php
  require_once '../model/dateModel.php';
+
 $opening_date = $_POST['opening_date'];
 $closing_date = $_POST['closing_date'];
 

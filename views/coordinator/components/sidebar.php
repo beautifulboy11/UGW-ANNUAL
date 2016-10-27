@@ -23,7 +23,7 @@
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li></li>
+                    <li><a href="../business/articles.php">Articles 2</a></li>                    
                     <li></li>
                     <li></li>
                     <li></li>

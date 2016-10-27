@@ -19,7 +19,8 @@ if (isset($_SESSION['username']) && isset($_SESSION['admin'])) {
             <link href="../../assets/plugins/bootstrap/bootstrap.min.css" rel="stylesheet">
             <link rel="stylesheet" href="../../assets/font-awesome/css/font-awesome.min.css">
             <link rel="stylesheet" href="../../assets/ionicons/css/ionicons.min.css">
-            
+            <script src="../../assets/plugins/jQuery/jQuery-2.2.0.min.js" type="text/javascript"></script>
+            <script src="../../assets/plugins/jQueryUI/jquery-ui.min.js" type="text/javascript"></script>
             <link href="../../assets/themes/base/datepicker.css" rel="stylesheet" type="text/css"/>            
             <link href="../../assets/themes/base/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
             <!-- Page-Level CSS -->    
@@ -58,7 +59,7 @@ if (isset($_SESSION['username']) && isset($_SESSION['admin'])) {
                                                         <span class="input-group-addon">
                                                             <i class="fa fa-calendar"></i>
                                                         </span>
-                                                        <input class="form-control" type="text" placeholder="Opening Date" id="opening_date" name="opening_date"/>                                                        
+                                                        <input class="form-control" type="date" placeholder="Opening Date" id="opening_date" name="opening_date"/>                                                        
                                                     </div>
                                                    
                                                 </div>
@@ -67,7 +68,7 @@ if (isset($_SESSION['username']) && isset($_SESSION['admin'])) {
                                                             <span class="input-group-addon">
                                                                 <i class="fa fa-calendar"></i>                                                            
                                                             </span>
-                                                            <input class="form-control" type="text" date-date-format='yy-mm-dd' placeholder="Closing Date" id="closing_date" name="closing_date"/>
+                                                            <input class="form-control" type="date" date-date-format='yy-mm-dd' placeholder="Closing Date" id="closing_date" name="closing_date"/>
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
@@ -100,27 +101,12 @@ if (isset($_SESSION['username']) && isset($_SESSION['admin'])) {
             </div>
             <!-- end wrapper -->
             <!-- Core Scripts - Include with every page -->
-            <script type="text/javascript" src="../../assets/plugins/jquery-1.10.2.js"></script>       
-            <script src="../../assets/plugins/jQueryUI/jquery-ui.min.js" type="text/javascript"></script>        
+                  
+                   
             <script src="../../assets/plugins/bootstrap/bootstrap.min.js"></script>
             <script src="../../assets/scripts/app.min.js" type="text/javascript"></script>
             <script src="../../assets/plugins/datepicker/bootstrap-datepicker.js" type="text/javascript"></script>
-            <script type="text/javascript">
-                $(document).ready(function(){
-                    $(function ()
-                    {
-                        $("#opening_date").datepicker({
-                            //$.datepicker.parseDate($(this).val());
-                        });
-                        
-                    });
-                    
-                    $(function ()
-                    {
-                        $("#closing_date").datepicker({ dateFormat: 'yy-mm-dd', });
-                    });
-                });   
-                </script>
+          
         </body>
     </html>
     <?php

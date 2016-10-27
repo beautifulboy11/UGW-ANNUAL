@@ -1,5 +1,7 @@
 <?php
+
 session_start();
+echo $_SESSION['faculty'];
 if (isset($_SESSION['username'])) {
     ?>
     <html>
@@ -167,10 +169,11 @@ if (isset($_SESSION['username'])) {
                                         <script src="../../assets/plugins/dataTables/dataTables.bootstrap.css"></script>
                                         <script type="text/javascript">
                 $(document).ready(function () {
+                    var studentid =<?php echo $_SESSION['username']; ?>;
                     $.ajax({
                         type: "POST",
                         dataType: "json",
-                        url: "../../model/articleLoader.php?student=" +<?php echo $_SESSION['username']; ?>,
+                        url: "../../model/articleLoader.php?student=" +studentid,
                         success: function (data) {
                             $('#article_table').DataTable({
                                 data: data,

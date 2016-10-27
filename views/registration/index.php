@@ -123,9 +123,8 @@
                                     <div class="col-sm-6 col-md-9">
                                         <select class="form-control" name="role" required="true">
                                             <option value='' selected='true'>Select.....</option>
-                                            <option value='1' >Administrator</option>
+                                            <option value='2'>Manager</option>
                                             <option value='3'>Coordinator</option>
-                                            <option value='3'>Manager</option>
                                             <option value='4'>Student</option>
                                         </select>
                                     </div>
