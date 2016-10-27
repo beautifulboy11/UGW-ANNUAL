@@ -85,7 +85,11 @@ if(isset($_SESSION['username'])){
 <script src="../../../assets/plugins/dataTables/dataTables.bootstrap.css"></script>
 <script type="text/javascript">
     $(document).ready(function () {
+<<<<<<< HEAD
         var faculty = <?php echo $_SESSION['faculty']; ?>;
+=======
+    	var faculty = <?php echo $_SESSION['faculty'];?>;
+>>>>>>> 7850dc9b610e72e8c18bf7eba49008de337f6462
         $.ajax({
             type: "POST",
             dataType: "json",
