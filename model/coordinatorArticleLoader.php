@@ -13,11 +13,11 @@
 	    die("Connection failed: " . $DB_CONNECTION->connect_error);
 	} 
 	
-	$sql = "SELECT fu.id, fu.post_author AS author, fu.post_title AS title, fu.post_date AS date, "
-                . "fu.filelocation, fu.post_status AS status, fu.comment_status,uc.comment "
-                . "FROM file_uploads AS fu "
-                . "LEFT JOIN ugw_comments AS uc ON fu.id = uc.comment_post_ID "
-                . "WHERE fu.post_author = '".$_REQUEST['student']."' ORDER BY date DESC";
+	$sql = "SELECT `ugw_user_faculty_map`.`faculty_id`, `ugw_users`.`name`AS 'name', `file_uploads`.`post_author`, `file_uploads`.`post_title`, `file_uploads`.`post_date`, `file_uploads`.`filelocation`, `file_uploads`.`post_status`, `file_uploads`.`comment_status`\n"
+    . "FROM `file_uploads`\n"
+    . "LEFT JOIN `ugw_users` ON `file_uploads`.`post_author` = `ugw_users`.`ID` \n"
+    . "LEFT JOIN `ugw_user_faculty_map` ON `ugw_users`.`ID` = `ugw_user_faculty_map`.`user_id`"
+    . "WHERE ugw_user_faculty_map.faculty_id = '".$_REQUEST['faculty']."'";
         
         if(!$results = $DB_CONNECTION->query($sql)){
             echo " " . $sql . "<br />" ."<span style='color:red;'>". $DB_CONNECTION->error;"</span>";
@@ -30,10 +30,12 @@
          while($row=$results->fetch_assoc()){
             //$data []=$row;
              $data [] = array(
-                 'title'=>$row['title'],
-                 'date'=>$row['date'],
-                 'comment'=>$row['comment'],
-                 'button'=>'<button class="btn">Comment</button>',                  
+                 'title'=>$row['post_title'],
+                 'download'=>$row['filelocation'],
+                 'date'=>$row['post_date'],
+                 'author'=>$row['name'],
+                 'comment'=>$row['comment_status'],
+                 'button'=>'<button>Comment</button>',                  
              );
          }
          

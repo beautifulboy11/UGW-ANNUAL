@@ -1,4 +1,5 @@
 <?php session_start();
+echo $_SESSION['faculty'];
 if(isset($_SESSION['username'])){
 ?>
 <html>
@@ -41,23 +42,30 @@ if(isset($_SESSION['username'])){
 									<thead>
 										<tr>
 											<th>Article Title</th>
+											<th>Get Article</th>
 											<th>Date Submitted(s)</th>
-											<th>Comment</th>                                           
+											<th>Author</th>
+											<th>Comment</th>    
+											<th>Action</th>                                         
 										</tr>
 									</thead>
-									<tbody>                                            
+									<tbody>
+									<div class="message" hidden="hidden">
+		                                <label id="errorlbl" class="control-label"><label>                      
 										<tr>
 											<td></td>
 											<td></td>
 											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
 										</tr>
+									</div> 
 									</tbody>
 								</table>
 								<p style="margin-top:10px;">*Note: Only articles commented on will display a comment.</p>
 							</div>
-                                                    <div class="message" hidden="hidden" style="color:red; font-weight: bold;">
-								<label id="errorlbl" class="control-label"></label>
-							</div>
+							
 						</section>
 					</div>
 				</section>
@@ -74,23 +82,28 @@ if(isset($_SESSION['username'])){
 
 <script src="../../../assets/plugins/bootstrap/bootstrap.min.js"></script>
 <script src="../../../assets/scripts/app.min.js"></script>
+<script src="../../../assets/plugins/dataTables/jquery.dataTables.js"></script>
+<script src="../../../assets/plugins/dataTables/dataTables.bootstrap.css"></script>
 <script type="text/javascript">
     $(document).ready(function () {
         $.ajax({
             type: "POST",
             dataType: "json",
-            url: "../../../model/coordinatorArticleLoader.php?coordinator=" +<?php echo $_SESSION['username']; ?>,
+            url: "../../../model/coordinatorArticleLoader.php?faculty="+<?php echo $_SESSION['faculty']; ?>,
             success: function (data) {
                 $('#article_table').DataTable({
                     data: data,
                     columns: [
 
                         {'data': 'title'},
+                        {'data': 'download'},
                         {'data': 'date'},
+                        {'data': 'author'},
                         {'data': 'comment'},
                         {'data': 'button'}
                        
                     ]
+
                 });
             },
             error: function (returnval) {

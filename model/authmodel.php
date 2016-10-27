@@ -46,12 +46,9 @@ function authenticate($username, $password) {
         
         while ($row=$results->fetch_assoc()) {
             $Role = $row['role'];
-            $Faculty = $row['faculty'];            
+            //$Faculty = $row['faculty'];            
             $_SESSION['name'] = $row['name'];
-            //echo $Faculty;
-            unset($_SESSION['faculty']);
-            $_SESSION['faculty']=$row['faculty'];
-           // echo $_SESSION['faculty'];
+            echo $_SESSION['faculty']=$row['faculty'];
             //function that handles redirection
             Redirect($Role);
         }
