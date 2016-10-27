@@ -86,10 +86,11 @@ if(isset($_SESSION['username'])){
 <script src="../../../assets/plugins/dataTables/dataTables.bootstrap.css"></script>
 <script type="text/javascript">
     $(document).ready(function () {
+    	var faculty = <?php echo $_SESSION['faculty'];?>;
         $.ajax({
             type: "POST",
             dataType: "json",
-            url: "../../../model/coordinatorArticleLoader.php?faculty="+<?php echo $_SESSION['faculty']; ?>,
+            url: "../../../model/coordinatorArticleLoader.php?faculty="+faculty,
             success: function (data) {
                 $('#article_table').DataTable({
                     data: data,
