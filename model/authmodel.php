@@ -10,11 +10,10 @@ function Redirect($Role){
         header('location:../views/manager/index.php');
     } else if ($Role == 3 AND $_SESSION['faculty'] == 1) {
         $_SESSION['coordinator'] = $Role;
-<<<<<<< HEAD
+
         //$_SESSION['faculty']= $faculty;
         //getFacultyArticles($Role, $faculty);
-=======
->>>>>>> 7850dc9b610e72e8c18bf7eba49008de337f6462
+
         header('location:../views/coordinator/business/business.php');
     } else if ($Role == 3 AND $_SESSION['faculty'] == 2) {
         $_SESSION['coordinator'] = $Role;
