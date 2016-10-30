@@ -36,7 +36,7 @@ if (isset($_SESSION['username'])) {
                      
                         <!--  page header -->
                         <section class="content-header">
-                            <h1 class="page-header text-center">Profile Mangement</h1>
+                            <h1 class="page-header text-center">Article Mangement</h1>
                         </section>
                         <!-- end  page header -->
                     
@@ -64,7 +64,7 @@ if (isset($_SESSION['username'])) {
                                                 while ($row = $result->fetch_assoc()) {
                                                     ?>
                                                     <tr>
-                                                        <td><?= $row['user_id'] ?></td>
+                                                        <td><?= $row['id'] ?></td>
                                                         <td><?= $row['post_title'] ?></td>
                                                         <td><?= $row['post_date'] ?></td>
                                                         <td><?= $row['name'] ?></td>
@@ -108,12 +108,11 @@ if (isset($_SESSION['username'])) {
                     $('#dataTables-example tbody tr td').on('click', 'button', function () {
                         var data = table.row($(this).parents('tr')).data();
                         // variables
-                        var user_id = data[0];// holds clearance id
-                        //var staffid = data[1];
+                        var post_id = data[0];// holds clearance id
 
                         var decision = confirm("Are You Sure you want to edit the record");
                         if (decision == true) {
-                            window.location = "edit_records/comments.php?user_id=" + user_id;
+                            window.location = "edit_records/comments.php?post_id=" + post_id;
                         }
 
                     });

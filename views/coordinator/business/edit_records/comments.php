@@ -34,7 +34,7 @@ if (isset($_SESSION['username'])) {
                     <div class="row" >
                         <!--  page header -->
                         <div class="col-lg-12" >
-                            <h1 class="page-header" style="color:#ffffff;">Add Comment</h1>
+                            <h1 class="page-header" style="color:#ffffff;">Add Comment form</h1>
                         </div>
                         <!-- end  page header -->
                     </div>
@@ -49,7 +49,7 @@ if (isset($_SESSION['username'])) {
                             <div class="panel panel-default" >
                                 <form id="add_comment" class="horinzontal-form" method="post" action="../../../../model/addComment.php">                                   
                                     <div class="form-group"> 
-                                        <input type="number" name="user_id"/>
+                                        <input name="post_id" hidden="true" value=" <?php echo $_REQUEST['post_id']; ?> "/>
                                         <textarea name="comment" id="comment" required="required" class="form-control" rows="8" placeholder="Comment"></textarea>
                                     </div> 
                                     
