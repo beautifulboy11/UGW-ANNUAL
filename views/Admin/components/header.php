@@ -1,5 +1,5 @@
 <header class="main-header">    
-    <a href="#" class="logo">
+    <a href="index.php" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><b>U</b>GW</span>
         <!-- logo for regular state and mobile devices -->
@@ -13,7 +13,7 @@
         </a>
         <ul class="nav navbar-nav navbar-left">
             <li>
-                <a class="navbar-brand" style="font-family:Adobe Arabic;" href="#">UNIVERSITY of GREENWICH ANNUAL MAGAZINE</a>
+                <a class="navbar-brand" style="font-family:Adobe Arabic;" href="index.php">UNIVERSITY of GREENWICH ANNUAL MAGAZINE</a>
 
             </li>
         </ul>

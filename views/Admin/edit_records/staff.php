@@ -32,14 +32,13 @@ if (isset($_SESSION['username'])) {
                <?php include'components/sidebar.php';?>
                 <!-- end navbar side -->
                 <!--  page-wrapper -->
-                <div class="content-wrapper" style=" background-color:white;">        
-                     
-                        <!--  page header -->
-                        <section class="content-header">
-                            <h1 class="page-header text-center">Profile Mangement</h1>
-                        </section>
-                        <!-- end  page header -->
-                    
+                <div class="content-wrapper" style=" background-color:white;">                             
+                    <!--  page header -->
+                    <section class="content-header">
+                        <h1 class="page-header text-center">Profile Mangement</h1>
+                    </section>
+                    <!-- end  page header -->
+
                     <?php include_once('../../../model/StaffRecord.php'); ?>
                     <div class="row">
                         <div class="col-md-12">
@@ -53,7 +52,7 @@ if (isset($_SESSION['username'])) {
                                                     <th>User Name</th>
                                                     <th>Full Name</th>
                                                     <th>Email</th>
-                                                    <th>Date Registeres</th>
+                                                    <th>Date Registered</th>
                                                     <th>Faculty</th>
                                                     <th>Role</th> 
                                                     <th>Action</th>                                                       

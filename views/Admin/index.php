@@ -38,52 +38,18 @@ if (isset($_SESSION['username']) && isset($_SESSION['admin'])) {
                             <li class="active">Dashboard</li>
                         </ol>
                     </section>
-                    <section class="content">
+                    <section class="content" style="background-color:#FFF;">
                         <!-- /.box-header -->
                         <div class="box-body">
-                            <table id="example2" class="table table-bordered table-hover">
+                            <table id="dates" class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
                                         <th>Academic Year</th>
                                         <th>Openning Date</th>
-                                        <th>Closing Date(s)</th>
-                                        
+                                        <th>Closing Date(s)</th>                                        
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Trident</td>
-                                        <td>Internet
-                                            Explorer 4.0
-                                        </td>
-                                        <td>Win 95+</td>                                        
-                                    </tr>
-                                    <tr>
-                                        <td>Trident</td>
-                                        <td>Internet
-                                            Explorer 5.0
-                                        </td>
-                                        <td>Win 95+</td>                                        
-                                    </tr>
-                                    <tr>
-                                        <td>Trident</td>
-                                        <td>Internet
-                                            Explorer 5.5
-                                        </td>
-                                        <td>Win 95+</td>                                        
-                                    </tr>
-                                    <tr>
-                                        <td>Trident</td>
-                                        <td>Internet
-                                            Explorer 6
-                                        </td>
-                                        <td>Win 98+</td>                                        
-                                    </tr>
-                                    <tr>
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 7</td>
-                                        <td>Win XP SP2+</td>                                        
-                                    </tr>
+                                <tbody>                                                                       
                                 </tbody>
 
                             </table>
@@ -105,17 +71,27 @@ if (isset($_SESSION['username']) && isset($_SESSION['admin'])) {
         <script src="../../assets/plugins/dataTables/dataTables.bootstrap.js" type="text/javascript"></script>
         <script src="../../assets/scripts/app.min.js" type="text/javascript"></script>
         <script>
-            $(function () {
+            $(document).ready(function () {
+                    
+                    $.ajax({
+                        type: "POST",
+                        dataType: "json",
+                        url: "../../model/dateReaderModel.php",
+                        success: function (data) {
+                            $('#dates').DataTable({
+                                data: data,
+                                columns: [
 
-                $('#example2').DataTable({
-                    "paging": true,
-                    "lengthChange": false,
-                    "searching": false,
-                    "ordering": true,
-                    "info": true,
-                    "autoWidth": false
+                                    {'data': 'year'},
+                                    {'data': 'openning_date'},
+                                    {'data': 'closing_date'},
+                                   
+                                ]
+                            });
+                        }
+
+                    });
                 });
-            });
         </script>
         <script src="../../assets/plugins/slimScroll/jquery.slimscroll.min.js" type="text/javascript"></script>                
     </html>

@@ -1,8 +1,8 @@
 <?php
-function CreateDate($opening_date,$closing_date){
+function CreateDate($opening_date,$closing_date,$year){
 include '../config/config.php';
 
-$dateSql= "INSERT INTO `ugw_dates`(`open_date`, `close_date`) VALUES ('".$opening_date."','".$closing_date."')";
+$dateSql= "INSERT INTO `ugw_dates`(academic_year,`open_date`, `close_date`) VALUES ('".$year."','".$opening_date."','".$closing_date."')";
 
 if(!$result = $DB_CONNECTION->query($dateSql)){
     echo " " . $dateSql . "<br />" ."<span style='color:red;'>". $DB_CONNECTION->error;"</span>";
