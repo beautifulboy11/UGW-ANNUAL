@@ -31,13 +31,9 @@ if (isset($_SESSION['username'])) {
                 <!-- end navbar side -->
                 <!--  page-wrapper -->
                 <div class="content-wrapper"   >        
-                    <div class="row" >
-                        <!--  page header -->
-                        <div class="col-lg-12" >
-                            <h1 class="page-header" style="color:#ffffff;">Staff form</h1>
-                        </div>
-                        <!-- end  page header -->
-                    </div>
+                    <section class="content-header" >                       
+                        <h1 class="page-header text-center" style="color:#000;">User Edit Form</h1>                                              
+                    </section>
                     <div class="row" style="margin-left:50px; margin-right:50px;">                
                         <div class="col-md-12" style="width:960px;">
                             <img  alt="UGW Logo" src="../../../assets/img/Banner.png" width="960" max-height="150" class="img-responsive">
@@ -47,7 +43,7 @@ if (isset($_SESSION['username'])) {
                         <div class="col-lg-12">
                             <!-- Advanced Tables -->
                             <div class="panel panel-default" >                        
-                                <div class="panel-body" style="padding-left:100px; min-height:780px;">
+                                <div class="panel-body" style="padding-left:10px; min-height:780px;">
                                     <?php
                                     //$student_Id = $_GET['studentId'];
                                     $servername = "localhost";
@@ -98,44 +94,33 @@ if (isset($_SESSION['username'])) {
 
                                                     <tr> 
                                                         <td>
-                                                            <label>Staff ID:</label>
+                                                            <label>User ID:</label>
                                                         </td>
                                                         <td>
                                                             <label  id="user_name" name="staff" > <?php echo $row['username']; ?></label>
-                                                            <input name="staffId" value="<?php echo $row['username']; ?>" hidden/>
+                                                            <input name="userid" value="<?php echo $row['username']; ?>" hidden/>
                                                         </td>
                                                     </tr>
                                                     <tr> 
                                                         <td><label>Name:</label></td>
                                                         <td>
-                                                            <input type="text" class="form-control" name="firstName" value="<?php echo $row['name']; ?>"/>
+                                                            <input type="text" class="form-control" name="fullname" value="<?php echo $row['name']; ?>"/>
                                                         </td>
                                                     </tr>
                                                     <tr> 
-                                                        <td><label>Sur Name:</label></td>
+                                                        <td><label>Email:</label></td>
                                                         <td>
-                                                            <input type="text" name="lastName" class="form-control" value="<?php echo $row['email']; ?>"/>
+                                                            <input type="text" name="email" class="form-control" value="<?php echo $row['email']; ?>"/>
                                                         </td>
                                                     </tr>
 
-                                                    <tr hidden="true"> <td><label>Level:</label></td>
-                                                        <td><input name="level" type="text" value="<?php echo $row['role']; ?>"/>
+                                                    <tr> <td><label>Level:</label></td>
+                                                        <td><input name="role" type="text" class="form-control" value="<?php echo $row['role']; ?>"/>
                                                         </td>
                                                     </tr>
-                                                    <tr> <td><label>Position:</label></td>
-                                                        <td>
-
-                                                            <select class="form-control" name="level">
-                                                                <option value ="8" selected="true">--Select Position--</option>
-                                                                <option value="0"> Administrator</option>
-                                                                <option value="1">University Librarian</option>
-                                                                <option value="5">Dean of School</option>
-                                                                <option value="2">Dean of Student Affairs</option>
-                                                                <option value="3">Finance Department</option>
-                                                                <option value="4">Academic Affairs</option>
-                                                            </select>
-
-                                                            <!--?php echo $row['role']; ?-->
+                                                    <tr> <td><label>Faculty:</label></td>
+                                                        <td>                                                           
+                                                            <input name='faculty' type='text'  class="form-control" value='<?php echo $row['faculty']; ?>'/>
                                                         </td>
                                                     </tr>
                                                     <?php
@@ -153,10 +138,10 @@ if (isset($_SESSION['username'])) {
                                     </form>
                                 </div>                                                         
                             </div>
+                            </div>
+                            <!--End Advanced Tables -->
                         </div>
-                        <!--End Advanced Tables -->
-                    </div>
-                </div>                    
+                    </div>                    
             </div>
             <!-- end page-wrapper -->
             <footer>

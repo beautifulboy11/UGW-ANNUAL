@@ -28,7 +28,7 @@ if(isset($_SESSION['username'])){
             nav{display: none;}
             canvas{display: block;}
             #page-wrapper{margin-left:-70px;}
-            #banner{margin-left:100;}
+            #banner{margin-left:100px;}
         }
     </style>
 </head>
@@ -154,7 +154,7 @@ if(isset($_SESSION['username'])){
                 <button class="btn btn-success pull-right noprint" id="print" onclick="window.print()"><i class="glypicon glypicon-print"></i>&nbsp;Print Report</button></div>
             </div>
             <div class="col-md-12" style="margin-left:5px; margin-right:5px; margin-top:5px;">                
-                <div class="col-md-12" style="width:;">
+                <div class="col-md-12">
                     <img id="banner" alt="UNZA Logo" src="../../img/Banner.png" width="" max-height="150" class="img-responsive">
                 </div>            
             </div>                    
@@ -163,7 +163,7 @@ if(isset($_SESSION['username'])){
                 <div class="col-lg-12">
                     <!-- Advanced Tables -->
                     <div class="" >                        
-                        <div class="col-xs-12" style="margin-left:0px; z-index:0;margin-top:30px;min-height: 400px; overflow-wrap: ;">
+                        <div class="col-xs-12" style="margin-left:0px; z-index:0;margin-top:30px;min-height: 400px;">
                         <!--Php supplying chart1-->
                         <?php 
                             $servername = "localhost";
@@ -212,7 +212,7 @@ if(isset($_SESSION['username'])){
                                 );
                         ?>
                             
-                        <div id="chartContainer" style="width:300;"></div>
+                        <div id="chartContainer" style="width:300px;"></div>
                         
                         <!--Script supporting chart1-->
                         <script type="text/javascript">
@@ -261,7 +261,7 @@ if(isset($_SESSION['username'])){
     
 </body>
 </html>
-
+<?php
 }else{
     header('location: ../../index.php');
 }

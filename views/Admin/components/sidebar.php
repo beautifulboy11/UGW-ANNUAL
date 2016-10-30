@@ -13,7 +13,7 @@
         <ul class="sidebar-menu">
             <li class="header">MAIN NAVIGATION</li>
             <li class="active treeview">
-                <a href="#">
+                <a href="index.php">
                     <i class="fa fa-home"></i> <span>Home</span> <i class="fa fa-angle-left pull-right"></i>
                 </a>	          
             </li>	        	       
@@ -33,7 +33,7 @@
                     <li>
                         <a href="edit_records/staff.php">
                             <i class="fa fa-circle-o text-aqua"></i>
-                            <span>Manage New User</span>
+                            <span>Manage User</span>
                         </a>
                     </li>
                 </ul>

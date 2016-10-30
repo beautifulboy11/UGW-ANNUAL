@@ -1,6 +1,6 @@
 <?php
  require_once '../model/dateModel.php';
-
+$year = $_POST['academic'];
 $opening_date = $_POST['opening_date'];
 $closing_date = $_POST['closing_date'];
 
@@ -17,4 +17,4 @@ if(date_diff($closing_date,$opening_date) > 0){
             //header('location:../views/Admin/setDate.php');
 }
 */
-CreateDate($opening_date,$closing_date);
+CreateDate($opening_date,$closing_date,$year);

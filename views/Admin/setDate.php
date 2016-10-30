@@ -54,26 +54,42 @@ if (isset($_SESSION['username']) && isset($_SESSION['admin'])) {
                                         <div class="col-md-2"></div>
                                         <div class="col-md-8">
                                             <form action="../../controller/dateSetting.php" method="POST" class="horinzontal-form">
+                                                <div class="col-md-12 form-group-lg" style="margin-bottom: 40px;">
+                                                    Academic Year:
+                                                    <div class="input-group">
+                                                        <select name="academic" required="true" class="form-control" >
+                                                            <option value=''selected="true">Select Year....</option>
+                                                            <option value="<?php echo date("Y"); ?>"><?php echo date("Y"); ?></option>
+
+                                                        </select>                                                      
+                                                    </div>                                                   
+                                                </div>
+                                                <br/>
                                                 <div class="col-md-6 form-group-lg">
+                                                    Openning Date:
                                                     <div class="input-group">
                                                         <span class="input-group-addon">
                                                             <i class="fa fa-calendar"></i>
                                                         </span>
-                                                        <input class="form-control" type="date" placeholder="Opening Date" id="opening_date" name="opening_date"/>                                                        
-                                                    </div>
-                                                   
+                                                        <input class="form-control" type="date" placeholder="Opening Date" id="opening_date" name="opening_date" required="true"/>                                                        
+                                                    </div>                                                   
                                                 </div>
-                                                    <div class="col-md-6 form-group-lg">
-                                                        <div class="input-group">
-                                                            <span class="input-group-addon">
-                                                                <i class="fa fa-calendar"></i>                                                            
-                                                            </span>
-                                                            <input class="form-control" type="date" date-date-format='yy-mm-dd' placeholder="Closing Date" id="closing_date" name="closing_date"/>
-                                                        </div>
+                                                
+                                                <div class="col-md-6 form-group-lg">
+                                                    Closing Date:
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">
+                                                            <i class="fa fa-calendar"></i>                                                            
+                                                        </span>
+                                                        <input class="form-control" type="date" date-date-format='yy-mm-dd' placeholder="Closing Date" id="closing_date" name="closing_date" required="true"/>
                                                     </div>
-                                                    <div class="form-group">
-                                                        <input style="margin-top: 30px;margin-left: 15px;" class="btn btn-primary" type="submit" name="submit" Value="SAVE"/>
-                                                    </div>
+                                                </div>
+                                                <br/>
+                                                
+
+                                                <div class="form-group">
+                                                    <input style="margin-top: 30px;margin-left: 15px;" class="btn btn-primary" type="submit" name="submit" Value="SAVE"/>
+                                                </div>
                                             </form>
                                             
                                             <?php

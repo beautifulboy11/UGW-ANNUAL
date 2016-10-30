@@ -29,119 +29,19 @@ if (isset($_SESSION['username'])) {
             <!--  wrapper -->
             <div class="wrapper">
                 <!-- navbar top -->
-                <header class="main-header">    
-                    <a href="#" class="logo">
-                        <!-- mini logo for sidebar mini 50x50 pixels -->
-                        <span class="logo-mini"><b>U</b>GW</span>
-                        <!-- logo for regular state and mobile devices -->
-                        <span class="logo-lg" style="margin-top:0px;">
-                            <img src="../../../assets/img/logo.png" class="img-responsive" />
-                        </span>
-                    </a>    	
-                    <nav class="navbar navbar-static-top">	      
-                        <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-                            <span class="sr-only">Toggle navigation</span>
-                        </a>
-                        <ul class="nav navbar-nav navbar-left">
-                            <li>
-                                <a class="navbar-brand" style="font-family:Adobe Arabic;" href="#">UNIVERSITY of GREENWICH ANNUAL MAGAZINE</a>
-
-                            </li>
-                        </ul>
-                        <!-- User Account: style can be found in dropdown.less -->
-                        <div class="navbar-custom-menu">
-                            <ul class="nav navbar-nav">
-
-                                <li class="dropdown user user-menu">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                        <i class="glyphicon glyphicon-user"></i>
-                                        <span class="hidden-xs"><?php echo $_SESSION['name'] ?></span>
-                                    </a>
-                                    <ul class="dropdown-menu">              
-                                        <li class="user-body">
-                                            <div class="pull-left">
-                                                <a href="#" class="btn btn-default btn-flat">Profile</a>
-                                            </div>
-                                            <div class="pull-right">
-                                                <a href="../../index.php" class="btn btn-default btn-flat">Sign out</a>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                </header>
-                <!-- end navbar top -->
-                <!-- navbar side -->
-                <aside class="main-sidebar" >
-                    <section class="sidebar">	      
-                        <div class="user-panel">
-                            <div style="margin-left:0px;"class="pull-left image">
-                                <img src="../../../assets/img/boxed-bg.jpg" class="img-circle" alt="User Image">
-                            </div>
-                            <div class="pull-left info">
-                                <p></p>
-                                <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-                            </div>
-                        </div>
-
-                        <ul class="sidebar-menu">
-                            <li class="header">MAIN NAVIGATION</li>
-                            <li class="active treeview">
-                                <a href="../index.php">
-                                    <i class="fa fa-home"></i> <span>Home</span> <i class="fa fa-angle-left pull-right"></i>
-                                </a>	          
-                            </li>	        	       
-                            <li class="treeview">
-                                <a href="#">
-                                    <i class="fa fa-user"></i>
-                                    <span>User Accounts</span>
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </a>
-                                <ul class="treeview-menu">
-                                    <li>
-                                        <a href="../manageStudents.php">
-                                            <i class="fa fa-circle-o text-aqua"></i>
-                                            <span>Student Accounts</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="../manageStaff.php">
-                                            <i class="fa fa-circle-o text-aqua"></i>
-                                            <span>Staff Accounts</span>
-                                        </a>
-                                    </li>
-
-
-                                </ul>
-                            </li>
-                            <li class="">
-                                <a href="#">
-                                    <i class="fa fa-gears"></i>
-                                    <span>Date Settings</span>		            			
-                                </a>
-                                <ul class="treeview-menu">
-                                    <li></li>
-                                    <li></li>					          
-                                </ul>
-                            </li>
-                        </ul>
-
-                    </section>
-
-                </aside>?>
+                <?php include'components/header.php';?>
                 <!-- end navbar side -->
+                <?php include'components/sidebar.php';?>
                 <!--  page-wrapper -->
                 
                 <div class="content-wrapper" style=" background-color:#ffffff;">        
-                    <div class="row">
+                    <section class="row">
                         <!--  page header -->
                         <div class="col-lg-12">
                             <h1 class="page-header text-center">Archive Staff Records </h1>
                         </div>
                         <!-- end  page header -->
-                    </div>
+                    </section>
                     <?php include_once('../../../model/StaffRecord.php'); ?>
                     <div class="row">
                         <div class="col-lg-12">
@@ -152,7 +52,7 @@ if (isset($_SESSION['username'])) {
                                         <table class="table table-responsive table-striped table-bordered table-hover" id="student">
                                             <thead>
                                                 <tr>
-                                                    <th>Staff ID</th>
+                                                    <th>User ID</th>
                                                     <th>Full Name</th>
                                                     <th>Sur Name </th>                                                                            
                                                     <th>Password</th>
@@ -168,11 +68,10 @@ if (isset($_SESSION['username'])) {
                                                     <tr>
                                                         <td><?= $row['username'] ?></td>
                                                         <td><?= $row['name'] ?></td>
-                                                        <td><?= $row['name'] ?></td>
-
-                                                        <td><?= $row['password'] ?></td>
-                                                        <td><?= $row['userlevel'] ?></td>
-                                                        <td><?= $row['userlevel'] ?></td>                                       
+                                                        <td><?= $row['email'] ?></td>
+                                                        <td><?= $row['registerDate'] ?></td>
+                                                        <td><?= $row['faculty'] ?></td>
+                                                        <td><?= $row['role'] ?></td>                                       
                                                         <td><?php echo"<button class='btn btn-danger'>Delete</button>" ?></td>
                                                     </tr>
 
@@ -216,11 +115,11 @@ if (isset($_SESSION['username'])) {
                     $('#student tbody tr td').on('click', 'button', function () {
                         var data = table.row($(this).parents('tr')).data();
                         // variables
-                        var staffId = data[0];
+                        var user_id = data[0];
                         var decision = confirm("Are You Sure you want to delete the record");
-                        if (decision == true) {
+                        if (decision === true) {
                             $.ajax({
-                                url: "../../../data_modules/delete_Staff.php?staffId=" + staffId,
+                                url: "../../../controller/deleteUserController.php?user=" + user_id,
                                 type: "POST",
                                 data: "",
                                 success: function (data) {

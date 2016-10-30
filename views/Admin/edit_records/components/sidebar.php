@@ -1,8 +1,9 @@
+
 <aside class="main-sidebar" >
     <section class="sidebar">	      
         <div class="user-panel">
             <div style="margin-left:10px;"class="pull-left image">
-                <img src="../../../assets/img/boxed-bg.jpg" class="img-circle" alt="User Image">
+                <img src="../../assets/img/boxed-bg.jpg" class="img-circle" alt="User">
             </div>
             <div class="pull-left info">
                 <p></p>
@@ -12,7 +13,7 @@
         <ul class="sidebar-menu">
             <li class="header">MAIN NAVIGATION</li>
             <li class="active treeview">
-                <a href="#">
+                <a href="../index.php">
                     <i class="fa fa-home"></i> <span>Home</span> <i class="fa fa-angle-left pull-right"></i>
                 </a>	          
             </li>	        	       
@@ -24,18 +25,20 @@
                 </a>
                 <ul class="treeview-menu">
                     <li>
-                        <a href="manageStudents.php">
+                        <a href="">
                             <i class="fa fa-circle-o text-aqua"></i>
-                            <span>Student Accounts</span>
+                            <span>Password Reset</span>
                         </a>
                     </li>
-                    <a href="staff.php">
+                    <li>
+                        <a href="staff.php">
                             <i class="fa fa-circle-o text-aqua"></i>
-                            <span>Manage New User</span>
+                            <span>Manage User</span>
                         </a>
+                    </li>
                 </ul>
             </li>
-             <li class="">
+            <li class="">
                 <a>
                     <i class="fa fa-gears"></i>
                     <span>Date Settings</span>		            			
@@ -50,6 +53,4 @@
                 </ul>
             </li>
         </ul>
-    </section>
-
-</aside>
+    </section></aside>
