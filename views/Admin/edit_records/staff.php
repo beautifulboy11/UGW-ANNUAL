@@ -50,8 +50,7 @@ if (isset($_SESSION['username'])) {
                                             <thead>
                                                 <tr>
                                                     <th>User Name</th>
-                                                    <th>Full Name</th>                                                                                         
-                                                    
+                                                    <th>Full Name</th>
                                                     <th>Email</th>
                                                     <th>Date Registered</th>
                                                     <th>Faculty</th>

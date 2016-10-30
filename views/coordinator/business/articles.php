@@ -37,7 +37,7 @@ if(isset($_SESSION['username'])){
 					<div class="col-md-8"  style="background-color:#fff; margin-top:30px;">                        
 						<section class="content">
 							<div class="row">                     
-								<table id="article_table" class="table table-bordered table-hover">
+								<table id="article_table" class="table table-responsive table-striped table-bordered table-hover">
 									<thead>
 										<tr>
 											<th>Article Title</th>
@@ -85,11 +85,8 @@ if(isset($_SESSION['username'])){
 <script src="../../../assets/plugins/dataTables/dataTables.bootstrap.css"></script>
 <script type="text/javascript">
     $(document).ready(function () {
-<<<<<<< HEAD
-        var faculty = <?php echo $_SESSION['faculty']; ?>;
-=======
+
     	var faculty = <?php echo $_SESSION['faculty'];?>;
->>>>>>> 7850dc9b610e72e8c18bf7eba49008de337f6462
         $.ajax({
             type: "POST",
             dataType: "json",
@@ -116,11 +113,23 @@ if(isset($_SESSION['username'])){
             }
 
         });
+        $('#article_table tbody tr td').on('click', 'button', function () {
+            var data = table.row($(this).parents('tr')).data();
+            // variables
+            var staff_id = data[0];// holds clearance id
+            //var staffid = data[1];
+
+            var decision = confirm("Are You Sure you want to edit the record");
+            if (decision == true) {
+                window.location = "edit_staff.php?staffid=" + staff_id;
+            }
+
+        });
     });
 </script>      
 </html>
 <?php
-}else{
+}else{ 
 	header('location:../../../index.php');
 }
 ?>
