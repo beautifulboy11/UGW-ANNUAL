@@ -12,81 +12,11 @@
 
         <ul class="sidebar-menu">
             <li class="header">MAIN NAVIGATION</li>
-            <li class="active treeview">
-                <a href="#">
-                    <i class="fa fa-home"></i> <span>Home</span> <i class="fa fa-angle-left pull-right"></i>
-                </a>	          
-            </li>	        	       
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-pie-chart"></i><span>Reports</span>
-                    <i class="fa fa-angle-left pull-right"></i>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="../business/articles.php">Articles 2</a></li>                    
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-            </li>
             <li>
-                <a href="#">
+                <a href="../business/article.php">
                     <i class="fa fa-laptop"></i><span>Articles</span>
                 </a>
             </li>
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-edit"></i><span></span>
-                    <i class="fa fa-angle-left pull-right"></i>
-                </a>
-                <ul class="treeview-menu">
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-            </li>
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-table"></i><span></span>
-                    <i class="fa fa-angle-left pull-right"></i>
-                </a>
-                <ul class="treeview-menu">
-                    <li></li>
-                    <li></li>
-                </ul>
-            </li>	       
-
-            <li class="treeview">	          
-                <ul class="treeview-menu">
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>				            
-                </ul>
-            </li>
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-share"></i><span></span>
-                    <i class="fa fa-angle-left pull-right"></i>
-                </a>
-                <ul class="treeview-menu">
-                    <li>	              
-                        <ul class="treeview-menu">				               
-                            <li>	                  
-                                <ul class="treeview-menu">
-                                    <li></li>
-                                    <li></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>				            
-                </ul>
-            </li>
-            <li></li>
-            <li class="header"></li>
-            <li></li>
-            <li></li>
-            <li></li>
         </ul>
     </section>
 

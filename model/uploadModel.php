@@ -15,20 +15,20 @@ session_start();
             echo 'Query Failed: ' .$DB_CONNECTION->error;
  	}else{
  		require("sendgrid-php/sendgrid-php.php");
-			$sender_name = "UGW-Admin";
-			$sender_email = "ugw@ugw.com";
-			$sender_message = "Student has uploaded a file"];
-			$send_to = "admin@admin.com";
-			$from = new SendGrid\Email($sender_name,$sender_email);
-			$subject = "New Upload Notification";
-			$to = new SendGrid\Email("New Mail",$send_to);
-			$content = new SendGrid\Content("text/plain", $sender_message);
-			$mail = new SendGrid\Mail($from, $subject, $to, $content);
-			$apiKey = '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';
-			$sg = new SendGrid($apiKey);
-			$response = $sg->client->mail()->send()->post($mail);
-			$_SESSION['notification'] = "Notification Sent Succesfully";
-            echo "Query is okay: ";
+		$sender_name = "UGW-Admin";
+		$sender_email = "ugw@ugw.com";
+		$sender_message = "Student has uploaded a file"];
+		$send_to = "admin@admin.com";
+		$from = new SendGrid\Email($sender_name,$sender_email);
+		$subject = "New Upload Notification";
+		$to = new SendGrid\Email("New Mail",$send_to);
+		$content = new SendGrid\Content("text/plain", $sender_message);
+		$mail = new SendGrid\Mail($from, $subject, $to, $content);
+		$apiKey = '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';
+		$sg = new SendGrid($apiKey);
+		$response = $sg->client->mail()->send()->post($mail);
+		$_SESSION['notification'] = "Notification Sent Succesfully";
+        echo "Query is okay: ";
  	}
  	$DB_CONNECTION->close();
  }

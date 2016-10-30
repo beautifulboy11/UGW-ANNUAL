@@ -26,10 +26,8 @@ if (isset($_SESSION['username'])) {
             <!--  wrapper -->
             <div class="wrapper">
                 <!-- navbar top -->
-                <?php include'../../admin/components/header.php';?>
-                <!-- end navbar top -->
-                <!-- navbar side -->
-               <?php include'../../admin/components/sidebar.php';?>
+                <?php include'../components/header.php';?>   
+                <?php include'../components/sidebar.php';?> 
                 <!-- end navbar side -->
                 <!--  page-wrapper -->
                 <div class="content-wrapper" style=" background-color:white;">        
@@ -69,7 +67,7 @@ if (isset($_SESSION['username'])) {
                                                         <td><?= $row['post_date'] ?></td>
                                                         <td><?= $row['name'] ?></td>
                                                         <td><?= $row['comment_status'] ?></td>
-                                                        <td><a href=<?= $row['filelocation'] ?>>Download</a></td>
+                                                        <td><a href='../../<?= $row['filelocation']; ?>'>Download</a></td>
                                                         <td><?php echo"<button class='btn btn-success'>Comment</button>" ?></td>
                                                     </tr>
                                                     <?php
