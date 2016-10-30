@@ -1,4 +1,5 @@
 <?php
+define('MB', 1048576);
         //check existance of uploads directory,if does not exist, make one
         if (!is_dir('../uploads'))
         {
@@ -33,7 +34,7 @@
             else
             {
                 // check size of the selected file if not exist
-                if ($_FILES['uploadedfile']['size'] > 500000)
+                if ($_FILES['uploadedfile']['size'] > 5*MB)
                 {                   
                     $uploadStatus = -1;
                 }
