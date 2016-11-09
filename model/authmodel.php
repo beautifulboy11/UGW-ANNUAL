@@ -10,13 +10,17 @@ function Redirect($Role){
         header('location:../views/manager/index.php');
     } else if ($Role == 3 AND $_SESSION['faculty'] == 1) {
         $_SESSION['coordinator'] = $Role;
+
         header('location:../views/coordinator/business/article.php');
+
+        header('location:../views/coordinator/business/index.php');
+
     } else if ($Role == 3 AND $_SESSION['faculty'] == 2) {
         $_SESSION['coordinator'] = $Role;
-        header('location:../views/coordinator/education/education.php');
+        header('location:../views/coordinator/education/index.php');
     } else if ($Role == 3 && $_SESSION['faculty'] == 3) {
         $_SESSION['coordinator'] = $Role;
-        header('location:../views/coordinator/science/science.php');
+        header('location:../views/coordinator/science/index.php');
     }else if($Role == 4 ){
         $_SESSION['student'] = $Role;
         header('location:../views/student/index.php');
