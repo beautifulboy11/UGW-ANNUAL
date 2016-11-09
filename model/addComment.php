@@ -6,8 +6,5 @@ include '../config/config.php';
     ('".$date."','".$_POST['post_id']."','".$_POST['comment']."')";
     
  	$results = $DB_CONNECTION->query($sql);
- 	if(!$result = $DB_CONNECTION->query($sql)){
-    echo " " . $sql . "<br />" ."<span style='color:red;'>". $DB_CONNECTION->error;"</span>";
-    exit();
-}
+    header("location:{$_SERVER["HTTP_REFERER"]}");
 ?>
