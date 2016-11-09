@@ -10,7 +10,7 @@ function Redirect($Role){
         header('location:../views/manager/index.php');
     } else if ($Role == 3 AND $_SESSION['faculty'] == 1) {
         $_SESSION['coordinator'] = $Role;
-        header('location:../views/coordinator/business/business.php');
+        header('location:../views/coordinator/business/article.php');
     } else if ($Role == 3 AND $_SESSION['faculty'] == 2) {
         $_SESSION['coordinator'] = $Role;
         header('location:../views/coordinator/education/education.php');

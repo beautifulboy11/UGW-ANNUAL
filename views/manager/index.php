@@ -10,7 +10,7 @@ if (isset($_SESSION['username'])) {
             <meta charset="utf-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-            <link rel="icon" href="../../../favico.png">		
+            <link rel="icon" href="../../favicon.ico">		
             <meta name="" content="annual magazine">		
             <link href="../../assets/css/AdminLTE.min.css" rel="stylesheet">
             <link href="../../assets/css/skins/_all-skins.css" rel="stylesheet">
@@ -33,8 +33,11 @@ if (isset($_SESSION['username'])) {
                         <h1 class="page-header text-center">Articles for Publication</h1>
 
                         <!-- end  page header -->
+                        <form action="../../controller/downloadController.php" method="get">
+                        <button id='' class='btn btn-success'>Download Zip</button>                                                       
+                        </form>
                     </section>
-                    <?php include_once('../../data_modules/LoadTabledean.php'); ?>
+                    <?php include_once('../../model/LoadSelectedArticles.php'); ?>
                     <section class="content">
                         <div class="row">
                             <div class="col-lg-12">
@@ -45,17 +48,10 @@ if (isset($_SESSION['username'])) {
                                             <table class="table table-responsive table-striped table-bordered table-hover" id="dataTables-example">
                                                 <thead>
                                                     <tr>
-                                                        <th>Clearance Id</th>
-                                                        <th>Student Id</th>
-                                                        <th>Student Name</th>                                        
-                                                        <th>Department</th>
-                                                        <th>Program</th>
-                                                        <th>Year</th>                                            
-                                                        <th>NRC</th>
-                                                        <th>Address</th>                                            
-                                                        <th>School Name</th>
-                                                        <!--th>Courses</th-->
-                                                        <th>Action</th>                                                       
+                                                        <th>Aurthor</th>
+                                                        <th>Article Title</th>
+                                                        <th>Date Submitted</th>                                                                                          
+                                                        <th>Status</th>                                                                                                             
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -63,23 +59,11 @@ if (isset($_SESSION['username'])) {
                                                     while ($row = $result->fetch_array()) {
                                                         ?>
                                                         <tr>
-                                                            <td><?= $row['clearance_id'] ?></td>
-                                                            <td><?= $row['student_id'] ?></td>
-                                                            <td><?= $row['student_Name'] ?></td>
-                                                            <td><?= $row['department'] ?></td>
-                                                            <td><?= $row['program'] ?></td>
-                                                            <td><?= $row['year_of_study'] ?></td>
-                                                            <td><?= $row['nrc'] ?></td>
-                                                            <td><?= $row['address'] ?></td>
-                                                            <td><?= $row['school_Name'] ?></td>
-                                                            <!--td><?php
-                                                            $couses = json_decode($row['course']);
-                                                            foreach ($couses as $course) {
-                                                                echo $course . "<br/>";
-                                                            }
-                                                            ?></td-->
-                                                            <td><?php echo"<button class='btn btn-success'>Process</button>" ?></td>
-                                                        </tr>
+                                                            <td><?= $row['name'] ?></td>
+                                                            <td><?= $row['post_title'] ?></td>
+                                                            <td><?= $row['post_date'] ?></td>                                                          
+                                                            <td><?= $row['post_status'] ?></td>
+                                                            </tr>
 
                                                         <?php
                                                     }
