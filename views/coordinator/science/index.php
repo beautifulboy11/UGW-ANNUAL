@@ -26,75 +26,19 @@ if (isset($_SESSION['username'])) {
             <!--  wrapper -->
             <div class="wrapper">
                 <!-- navbar top -->
-                <?php include'components/header.php'; ?>
-                <!-- end navbar top -->
-                <!-- navbar side -->
-                <aside class="main-sidebar" >
-                    <section class="sidebar">	      
-                        <div class="user-panel">
-                            <div style="margin-left:10px;"class="pull-left image">
-                                <img src="../../../assets/img/boxed-bg.jpg" class="img-circle" alt="User">
-                            </div>
-                            <div class="pull-left info">
-                                <p></p>
-                                <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-                            </div>
-                        </div>
-                        <ul class="sidebar-menu">
-                            <li class="header">MAIN NAVIGATION</li>
-                            <li class="active treeview">
-                                <a href="../index.php">
-                                    <i class="fa fa-home"></i> <span>Home</span> <i class="fa fa-angle-left pull-right"></i>
-                                </a>	          
-                            </li>	        	       
-                            <li class="treeview">
-                                <a href="#">
-                                    <i class="fa fa-user"></i>
-                                    <span>User Accounts</span>
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </a>
-                                <ul class="treeview-menu">
-                                    <li>
-                                        <a href="../view_records/view_staff.php">
-                                            <i class="fa fa-trash-o text-aqua"></i>
-                                            <span>Delete User</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="../edit_records/staff.php">
-                                            <i class="fa fa-circle-o text-aqua"></i>
-                                            <span>Manage User</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="">
-                                <a>
-                                    <i class="fa fa-gears"></i>
-                                    <span>Date Settings</span>		            			
-                                </a>
-                                <ul class="treeview-menu">
-                                    <li><a href="../setDate.php">
-                                            <i class="glyphicon glyphicon-cog"></i>
-                                            Set Dates
-                                        </a>
-                                    </li>
-                                    <li></li>					          
-                                </ul>
-                            </li>
-                        </ul>
-                    </section></aside>
-
+                <?php include'components/header.php';?>   
+                <?php include'components/sidebar.php';?> 
                 <!-- end navbar side -->
                 <!--  page-wrapper -->
-                <div class="content-wrapper" style=" background-color:white;">                             
-                    <!--  page header -->
-                    <section class="content-header">
-                        <h1 class="page-header text-center">Profile Mangement</h1>
-                    </section>
-                    <!-- end  page header -->
-
-                    <?php include_once('../../../model/StaffRecord.php'); ?>
+                <div class="content-wrapper" style=" background-color:white;">        
+                     
+                        <!--  page header -->
+                        <section class="content-header">
+                            <h1 class="page-header text-center">Article Mangement</h1>
+                        </section>
+                        <!-- end  page header -->
+                    
+                    <?php include_once('../../../model/articleModel.php'); ?>
                     <div class="row">
                         <div class="col-md-12">
                             <!-- Advanced Tables -->
@@ -104,12 +48,12 @@ if (isset($_SESSION['username'])) {
                                         <table class="table table-responsive table-striped table-bordered table-hover" id="dataTables-example">
                                             <thead>
                                                 <tr>
-                                                    <th>User Name</th>
-                                                    <th>Full Name</th>
-                                                    <th>Email</th>
-                                                    <th>Date Registered</th>
-                                                    <th>Faculty</th>
-                                                    <th>Role</th> 
+                                                    <th>ID</th>
+                                                    <th>Title</th>
+                                                    <th>Date</th>
+                                                    <th>Author</th>
+                                                    <th>Comment Status</th>
+                                                    <th>Download</th>
                                                     <th>Action</th>                                                       
                                                 </tr>
                                             </thead>
@@ -118,14 +62,13 @@ if (isset($_SESSION['username'])) {
                                                 while ($row = $result->fetch_assoc()) {
                                                     ?>
                                                     <tr>
-                                                        <td><?= $row['username'] ?></td>
+                                                        <td><?= $row['id'] ?></td>
+                                                        <td><?= $row['post_title'] ?></td>
+                                                        <td><?= $row['post_date'] ?></td>
                                                         <td><?= $row['name'] ?></td>
-                                                        <td><?= $row['email'] ?></td>
-                                                        <td><?= $row['registerDate'] ?></td>
-                                                        <td><?= $row['faculty'] ?></td>
-                                                        <td><?= $row['role'] ?></td>
-
-                                                        <td><?php echo"<button class='btn btn-success'>Edit</button>" ?></td>
+                                                        <td><?= $row['comment_status'] ?></td>
+                                                        <td><a href='../../<?= $row['filelocation']; ?>'>Download</a></td>
+                                                        <td><?php echo"<button class='btn btn-success'>Comment</button>" ?></td>
                                                     </tr>
                                                     <?php
                                                 }
@@ -140,9 +83,9 @@ if (isset($_SESSION['username'])) {
                     </div>                    
                 </div>
                 <footer class="main-footer">
-                    <?php include 'components/footer.php'; ?>
+                     <?php include '../../admin/components/footer.php';?>
                 </footer>
-
+               
             </div>
             <!-- end wrapper -->
 
@@ -163,12 +106,11 @@ if (isset($_SESSION['username'])) {
                     $('#dataTables-example tbody tr td').on('click', 'button', function () {
                         var data = table.row($(this).parents('tr')).data();
                         // variables
-                        var staff_id = data[0];// holds clearance id
-                        //var staffid = data[1];
+                        var post_id = data[0];// holds clearance id
 
                         var decision = confirm("Are You Sure you want to edit the record");
                         if (decision == true) {
-                            window.location = "edit_staff.php?staffid=" + staff_id;
+                            window.location = "edit_records/comments.php?post_id=" + post_id;
                         }
 
                     });

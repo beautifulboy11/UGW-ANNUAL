@@ -25,9 +25,9 @@
                 </a>
                 <ul class="treeview-menu">
                     <li>
-                        <a href="">
-                            <i class="fa fa-circle-o text-aqua"></i>
-                            <span>Password Reset</span>
+                        <a href="view_records/view_staff.php">
+                            <i class="fa fa-trash-o text-aqua"></i>
+                            <span>Delete User</span>
                         </a>
                     </li>
                     <li>

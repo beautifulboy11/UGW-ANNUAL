@@ -1,31 +1,40 @@
 <?php
-define('MB', 1048576);
+        define('MB', 1048576);
+        // file handling database interactions
+        require '../model/uploadModel.php';
+        
         //check existance of uploads directory,if does not exist, make one
         if (!is_dir('../uploads'))
         {
             mkdir("../uploads");
-        }
-        
-        // file handling database interactions
-        require '../model/uploadModel.php';
-        
+        }        
+                
         // directory where our files will be stored
         $target_dir = "../uploads/";
         
         // specifies path of file to be uploaded
         $target_file = $target_dir . basename($_FILES['uploadedfile']['name']); 
+        
         //get extension of selected file
         $fileType = pathinfo($target_file, PATHINFO_EXTENSION); 
         //hold status of the uploaded file
         $uploadStatus = 1; 
+        $academicYear = date("Y");
+        getSubmissionDate($academicYear);
         
-        if (!isset($_POST['checkbox']))
+        //CALCULATE THE DATE DIFFERENCE
+        $date1 = new DateTime("now");
+        $date2 = new DateTime($submissionDate);
+
+        $interval =$date1->diff($date2);
+        $diff= $interval->format('%R%a');
+        if ($diff < 0)
         {
-            //echo 'Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy';
-            $_SESSION['agree'] = 'failure';
+            $_SESSION['date'] = 'failure';
             header("location:../views/student/index.php");
         } 
-        else {
+        else 
+        {
             //check if file being uploaded exits in directory
             if (file_exists($target_file))
             {               
@@ -72,8 +81,7 @@ define('MB', 1048576);
                     else
                     {
                         if (copy($_FILES['uploadedfile']['tmp_name'], $target_file)) {
-                        saveData($target_file);
-                        //echo 'File Uploaded successfully';
+                        saveData($target_file);                        
                         $_SESSION['success']= 'success';
                         header("location:../views/student/index.php");
                     } else {

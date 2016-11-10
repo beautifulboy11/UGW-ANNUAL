@@ -19,11 +19,7 @@ if (isset($_SESSION['username']) && isset($_SESSION['admin'])) {
             <link href="../../assets/plugins/bootstrap/bootstrap.min.css" rel="stylesheet">
             <link rel="stylesheet" href="../../assets/font-awesome/css/font-awesome.min.css">
             <link rel="stylesheet" href="../../assets/ionicons/css/ionicons.min.css">
-            <script src="../../assets/plugins/jQuery/jQuery-2.2.0.min.js" type="text/javascript"></script>
-            <script src="../../assets/plugins/jQueryUI/jquery-ui.min.js" type="text/javascript"></script>
-            <link href="../../assets/themes/base/datepicker.css" rel="stylesheet" type="text/css"/>            
-            <link href="../../assets/themes/base/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
-            <!-- Page-Level CSS -->    
+               
         </head>
         <body class="skin-blue sidebar-mini">
             <!--  wrapper -->
@@ -59,6 +55,17 @@ if (isset($_SESSION['username']) && isset($_SESSION['admin'])) {
                                                     <div class="input-group">
                                                         <select name="academic" required="true" class="form-control" >
                                                             <option value=''selected="true">Select Year....</option>
+                                                            <option value='2005'>2005</option>
+                                                            <option value='2006'>2006</option>
+                                                            <option value='2007'>2007</option>
+                                                            <option value='2008'>2008</option>
+                                                            <option value='2009'>2009</option>
+                                                            <option value='2010'>2010</option>
+                                                            <option value='2011'>2011</option>
+                                                            <option value='2012'>2012</option>
+                                                            <option value='2013'>2013</option>
+                                                            <option value='2014'>2014</option>
+                                                            <option value='2015'>2015</option>
                                                             <option value="<?php echo date("Y"); ?>"><?php echo date("Y"); ?></option>
 
                                                         </select>                                                      
@@ -94,10 +101,20 @@ if (isset($_SESSION['username']) && isset($_SESSION['admin'])) {
                                             
                                             <?php
                                             if(isset($_SESSION['insert_sucess'])){
-                                                echo "<span style='color:green; font-weight:bold;>Dates Set Successfully</span>";
+                                                 echo '<div class="alert alert-success alert-dismissible" role="alert">'
+                                    . '<button type="button" class="close" data-dismiss="alert" aria-label="Close">'
+                                            . '<span aria-hidden="true">&times;</span></button>'
+                                    . ' Congratulations, Dates Submitted'
+                                    . '</div>';
+                                    unset($_SESSION['exits']);
                                                 unset($_SESSION['insert_sucess']);
                                             }elseif(isset($_SESSION['insert_failure'])){
-                                                echo "<span style='color:red; font-weight:bold;>Check your dates, Closing date must be later then opening date</span>";
+                                                 echo '<div class="alert alert-danger alert-dismissible" role="alert">'
+                                    . '<button type="button" class="close" data-dismiss="alert" aria-label="Close">'
+                                            . '<span aria-hidden="true">&times;</span></button>'
+                                    . ' Sorry, Review your dates'
+                                    . '</div>';
+                                    unset($_SESSION['exits']); 
                                                 unset($_SESSION['insert_failure']);
                                             }
                                             ?>
@@ -116,14 +133,15 @@ if (isset($_SESSION['username']) && isset($_SESSION['admin'])) {
                 </footer>
             </div>
             <!-- end wrapper -->
-            <!-- Core Scripts - Include with every page -->
+            
+        </body>
+        <!-- Core Scripts - Include with every page -->
                   
-                   
+            <script src="../../assets/plugins/jquery-1.10.2.js" type="text/javascript"></script>
             <script src="../../assets/plugins/bootstrap/bootstrap.min.js"></script>
             <script src="../../assets/scripts/app.min.js" type="text/javascript"></script>
-            <script src="../../assets/plugins/datepicker/bootstrap-datepicker.js" type="text/javascript"></script>
+            <!--script src="../../assets/plugins/datepicker/bootstrap-datepicker.js" type="text/javascript"></script-->
           
-        </body>
     </html>
     <?php
 } else {

@@ -9,7 +9,7 @@ if (isset($_SESSION['username'])) {
             <meta charset="utf-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-            <link rel="icon" href="../../favicon.ico">
+            <link rel="icon" href="../../favicon.ico">        
             <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine:bold,bolditalic|Inconsolata:italic|Droid+Sans">
             <meta name="" content="annual magazine">		
             <link href="../../assets/css/AdminLTE.min.css" rel="stylesheet">
@@ -111,11 +111,11 @@ if (isset($_SESSION['username'])) {
                                     . '</div>';
                                     unset($_SESSION['success']);
                                 }
-                                elseif (isset($_SESSION['agree'])) {
-                                    echo '<div class="alert alert-info alert-dismissible" role="alert">'
+                                elseif (isset($_SESSION['date'])) {
+                                    echo '<div class="alert alert-danger alert-dismissible" role="alert">'
                                     . '<button type="button" class="close" data-dismiss="alert" aria-label="Close">'
                                             . '<span aria-hidden="true">&times;</span></button>'
-                                    . 'Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy '
+                                    . 'Sorry You are late. Submission is Closed'
                                     . '</div>';
                                     unset($_SESSION['agree']);
                                 }

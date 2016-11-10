@@ -39,7 +39,7 @@ function saveData($target_file) {
     $faculty = $_SESSION['faculty'];
     global $_FILES, $_POST;
     $student = $_SESSION['username'];
-    $date = date("Y/m/d h:i:sa");
+    $date = date("Y/m/d");
     $title = $DB_CONNECTION->real_escape_string($_POST['title']);
 
     $sql = "INSERT INTO `file_uploads`(`post_author`, `post_title`, `post_date`, `filelocation`)"
@@ -54,3 +54,22 @@ function saveData($target_file) {
     $DB_CONNECTION->close();
 }
 
+<<<<<<< HEAD
+=======
+function getSubmissionDate($academicYear){
+    require '../config/config.php';
+    global $submissionDate;
+    $sql = "SELECT academic_year, open_date, close_date "
+            . "FROM ugw_dates "
+            . "WHERE academic_year ='".$academicYear."'";
+    if (!$result = $DB_CONNECTION->query($sql)) {
+        echo " " . $sql . "<br />" . "<span style='color:red;'>" . $DB_CONNECTION->error;
+        "</span>";
+        exit();
+    }
+    while ($row=$result->fetch_assoc()){
+        
+        $submissionDate = $row['close_date'];
+    }
+}
+>>>>>>> 6f8b89084916f3359902921288a17f10768b8233

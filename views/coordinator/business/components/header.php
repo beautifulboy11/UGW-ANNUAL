@@ -4,11 +4,7 @@
         <span class="logo-mini"><b>U</b>GW</span>
         <!-- logo for regular state and mobile devices -->
         <span class="logo-lg" style="margin-top:0px;">
-<<<<<<< HEAD
-            <img src="../../assets/img/logo.png" class="img-responsive" />
-=======
-            <img src="../../../../assets/img/logo.png" class="img-responsive" />
->>>>>>> 6f8b89084916f3359902921288a17f10768b8233
+            <img src="../../../assets/img/logo.png" class="img-responsive" />
         </span>
     </a>    	
     <nav class="navbar navbar-static-top">	      
@@ -17,7 +13,7 @@
         </a>
         <ul class="nav navbar-nav navbar-left">
             <li>
-                <a class="navbar-brand" style="font-family:Adobe Arabic;" href="#">UNIVERSITY of GREENWICH ANNUAL MAGAZINEs</a>
+                <a class="navbar-brand" style="font-family:Adobe Arabic;" href="#">UNIVERSITY of GREENWICH ANNUAL MAGAZINE</a>
 
             </li>
         </ul>
@@ -36,11 +32,7 @@
                                 <a href="#" class="btn btn-default btn-flat">Profile</a>
                             </div>
                             <div class="pull-right">
-<<<<<<< HEAD
-                                <a href="../../index.php" class="btn btn-default btn-flat">Sign out</a>
-=======
-                                <a href="../../../../index.php" class="btn btn-default btn-flat">Sign out</a>
->>>>>>> 6f8b89084916f3359902921288a17f10768b8233
+                                <a href="../../../index.php" class="btn btn-default btn-flat">Sign out</a>
                             </div>
                         </li>
                     </ul>
