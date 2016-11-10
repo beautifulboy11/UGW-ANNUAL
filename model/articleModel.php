@@ -1,5 +1,5 @@
 <?php
-include '../../../config/config.php';
+include '../../config/config.php';
 
     $sql = "SELECT `ugw_user_faculty_map`.`faculty_id`, `ugw_users`.`name`AS 'name', `file_uploads`.`post_author`, `file_uploads`.`post_title`, `file_uploads`.`post_date`, `file_uploads`.`id`, `file_uploads`.`filelocation`, `file_uploads`.`post_status`, `file_uploads`.`comment_status`\n"
     . "FROM `file_uploads`\n"

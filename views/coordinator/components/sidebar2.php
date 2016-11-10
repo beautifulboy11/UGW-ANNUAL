@@ -13,7 +13,7 @@
         <ul class="sidebar-menu">
             <li class="header">MAIN NAVIGATION</li>
             <li>
-                <a href="index.php">
+                <a href="../index.php">
                     <i class="fa fa-laptop"></i><span>Articles</span>
                 </a>
             </li>
