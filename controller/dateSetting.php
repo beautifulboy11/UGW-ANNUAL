@@ -4,17 +4,19 @@ $year = $_POST['academic'];
 $opening_date = $_POST['opening_date'];
 $closing_date = $_POST['closing_date'];
 
-echo $opening_date;
-echo $closing_date;
-/*
-$diff=date_diff($closing_date,$opening_date);
-echo $diff->format("%R%a days");
-exit();
-if(date_diff($closing_date,$opening_date) > 0){
-    CreateDate($opening_date,$closing_date);
+
+$date1 = new DateTime($opening_date);
+$date2 = new DateTime($closing_date);
+
+$interval =$date1->diff($date2);
+$diff= $interval->format('%R%a');
+
+//exit();
+if($diff > 0){
+    CreateDate($opening_date,$closing_date,$year);
 }else{
      $_SESSION['insert_failure'] = 'true';
-            //header('location:../views/Admin/setDate.php');
+     header('location:../views/Admin/setDate.php');
 }
-*/
-CreateDate($opening_date,$closing_date,$year);
+
+

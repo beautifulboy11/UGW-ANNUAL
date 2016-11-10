@@ -1,4 +1,7 @@
 <?php
 $user = $_REQUEST['user'];
 require_once '../model/deleteUserModel.php';
-deleteUSer($user);
+
+deleteFacultyAssoc($user);
+deleteUserGroupAssoc($user);
+deleteUserRecord($user);

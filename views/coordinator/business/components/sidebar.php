@@ -2,7 +2,7 @@
     <section class="sidebar">	      
         <div class="user-panel">
             <div style="margin-left:10px;"class="pull-left image">
-                <img src="../../../../assets/img/boxed-bg.jpg" class="img-circle" alt="User Image">
+                <img src="../../../assets/img/boxed-bg.jpg" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
                 <p></p>

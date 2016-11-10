@@ -12,28 +12,26 @@
         <ul class="sidebar-menu">
             <li class="header">MAIN NAVIGATION</li>
             <li class="active treeview">
-                <a href="index.php">
+                <a href="../manager/index.php">
                     <i class="fa fa-home"></i> <span>Home</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>	          
             </li>	        	       
+            
             <li class="treeview">
-                
-            </li>
-            <li class="treeview">
-                <a href="">
+                <a href="#">
                     <i class="fa fa-pie-chart"></i><span>Reports</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
                     <li>
-                        <a href="../report/report.php">
+                        <a href="report.php">
                             <i class="glyphicon glyphicon-stats"></i>
                             <span>Statistical Reports</span>
                         </a>
                     </li>
                     <li>
-                        <a href="../report/exceptionReport.php">
+                        <a href="exceptionReport.php">
                             <i class="fa fa-circle-o text-red"></i>
                             <span>Exception Reports</span>
                         </a>

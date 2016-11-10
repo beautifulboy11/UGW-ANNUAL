@@ -26,8 +26,8 @@ if (isset($_SESSION['username'])) {
             <!--  wrapper -->
             <div class="wrapper">
                 <!-- navbar top -->
-                <?php include'../components/header.php';?>   
-                <?php include'../components/sidebar.php';?> 
+                <?php include'components/header.php';?>   
+                <?php include'components/sidebar.php';?> 
                 <!-- end navbar side -->
                 <!--  page-wrapper -->
                 <div class="content-wrapper" style=" background-color:white;">        

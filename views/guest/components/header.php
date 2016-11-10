@@ -4,7 +4,7 @@
         <span class="logo-mini"><b>U</b>GW</span>
         <!-- logo for regular state and mobile devices -->
         <span class="logo-lg" style="margin-top:0px;">
-            <img src="../../../../assets/img/logo.png" class="img-responsive" />
+            <img src="../../assets/img/logo.png" class="img-responsive" />
         </span>
     </a>    	
     <nav class="navbar navbar-static-top">	      
@@ -24,7 +24,7 @@
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <i class="glyphicon glyphicon-user"></i>
-                        <span class="hidden-xs"><?php echo $_SESSION['name'] ?></span>
+                        <span class="hidden-xs"><?php echo $_SESSION['name']; ?></span>
                     </a>
                     <ul class="dropdown-menu">              
                         <li class="user-body">
@@ -32,7 +32,7 @@
                                 <a href="#" class="btn btn-default btn-flat">Profile</a>
                             </div>
                             <div class="pull-right">
-                                <a href="../../../../index.php" class="btn btn-default btn-flat">Sign out</a>
+                                <a href="../../index.php" class="btn btn-default btn-flat">Sign out</a>
                             </div>
                         </li>
                     </ul>

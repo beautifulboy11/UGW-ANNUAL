@@ -79,7 +79,7 @@ if (isset($_SESSION['username'])) {
                                         ?>
                                     </div>
 
-                                    <form class="horinzontal-form" id="add_comment" method="POST" action="../../../data_modules/staff_record_update.php" >
+                                    <form class="horinzontal-form" id="add_comment" method="POST" action="../../../model/updateUser.php" >
                                         <table class="table">
                                             <thead>
                                                 <tr>
@@ -115,13 +115,19 @@ if (isset($_SESSION['username'])) {
                                                     </tr>
 
                                                     <tr> <td><label>Level:</label></td>
-                                                        <td><input name="role" type="text" class="form-control" value="<?php echo $row['role']; ?>"/>
+                                                        <td><input name="role" type="text" class="form-control" disabled="" value="<?php echo $row['role']; ?>"/>
                                                         </td>
                                                     </tr>
                                                     <tr> <td><label>Faculty:</label></td>
                                                         <td>                                                           
-                                                            <input name='faculty' type='text'  class="form-control" value='<?php echo $row['faculty']; ?>'/>
+                                                            <input name='faculty' type='text' disabled="" class="form-control" value='<?php echo $row['faculty']; ?>'/>
                                                         </td>
+                                                    </tr>
+                                                    <tr> <td><label>User Block:</label></td>
+                                                        <td>                                                           
+                                                            <input name='block' type='text'  class="form-control" value='<?php echo $row['block']; ?>'/>
+                                                        </td>
+                                                        <td>0 = False 1= True</td>
                                                     </tr>
                                                     <?php
                                                 }

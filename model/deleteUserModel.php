@@ -16,12 +16,8 @@ function deleteUserRecord($user){
    $sql= "DELETE FROM `ugw_users` WHERE ID ='".$user."'";
    $DB_CONNECTION->query($sql);
 }
+  
 
-function deleteUSer($user){
-    deleteFacultyAssoc($user);
-    deleteUserGroupAssoc($user);
-    deleteUserRecord($user);
-}
 
 
 

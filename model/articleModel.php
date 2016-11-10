@@ -5,7 +5,8 @@ include '../../../config/config.php';
     . "FROM `file_uploads`\n"
     . "LEFT JOIN `ugw_users` ON `file_uploads`.`post_author` = `ugw_users`.`ID` \n"
     . "LEFT JOIN `ugw_user_faculty_map` ON `ugw_users`.`ID` = `ugw_user_faculty_map`.`user_id`"
-    . "WHERE ugw_user_faculty_map.faculty_id = '".$_SESSION['faculty']."'";
+    . "WHERE ugw_user_faculty_map.faculty_id = '".$_SESSION['faculty']."' "
+            . "AND file_uploads.comment_status = 'open'";
 
 
 if(!$result = $DB_CONNECTION->query($sql)){

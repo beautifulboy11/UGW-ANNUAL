@@ -24,20 +24,16 @@ if (isset($_SESSION['username'])) {
             <!--  wrapper -->
             <div class="wrapper">
                 <!-- navbar top -->
-                <?php include '../../../admin/components/header.php'; ?>
+                <?php include 'components/header.php'; ?>
                 <!-- end navbar top -->
                 <!-- navbar side -->
-                <?php include '../../../admin/components/sidebar.php'; ?>
+                <?php include 'components/sidebar.php'; ?>
                 <!-- end navbar side -->
                 <!--  page-wrapper -->
                 <div class="content-wrapper"   >        
-                    <div class="row" >
-                        <!--  page header -->
-                        <div class="col-lg-12" >
-                            <h1 class="page-header" style="color:#ffffff;">Add Comment form</h1>
-                        </div>
-                        <!-- end  page header -->
-                    </div>
+                    <section class="row" >
+                        <h1 class="page-header text-center" style="">Add Comment form</h1>                      
+                    </section>
                     <div class="row" style="margin-left:50px; margin-right:50px;">                
                         <div class="col-md-12" style="width:960px;">
                             <img  alt="UGW Logo" src="../../../../assets/img/Banner.png" width="960" max-height="150" class="img-responsive">
@@ -51,7 +47,15 @@ if (isset($_SESSION['username'])) {
                                     <div class="form-group"> 
                                         <input name="post_id" hidden="true" value=" <?php echo $_REQUEST['post_id']; ?> "/>
                                         <textarea name="comment" id="comment" required="required" class="form-control" rows="8" placeholder="Comment"></textarea>
-                                    </div> 
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="checkbox" name="publish" value="Publish" />
+                                        Publish
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="checkbox" name="unpublish" value="Unpublish" />
+                                        UnPublish
+                                    </div>
                                     
                                     <div class="form-group"> 
                                         <button id="submit" type="submit" class="btn btn-primary">Add Comment</button>                                         

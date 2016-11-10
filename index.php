@@ -13,14 +13,14 @@
     </head>
     <body class="body-Login-back">
         <div class="container">
-            <div class="row" style="margin-top:10px;">
-                <div class="col-lg-3"></div>
-                <div class="col-lg-6">
+            <div class="row" style="margin-top:10px; margin-bottom: 50px;">
+                <div class="col-lg-2 col-md-3"></div>
+                <div class="col-lg-8 col-md-6">
                     <img src="assets/img/banner1.png" alt="" class="img-responsive" />
                 </div> 
-                <div class="col-lg-3"></div>
+                <div class="col-lg-2 col-md-3"></div>
             </div>
-            <div class="row"style="margin-top:10px; padding-bottom:50px; background-color:#00338e; " >
+            <div class="col-lg-12 col-md-12"style="margin-top:10px; padding-bottom:50px; background-color:#00338e; " >
                 <div class="col-md-12" style="margin-top:30px; padding-bottom:50px; background-color:#00338e; "> 
                     <div class="col-md-4"></div>           
                     <div class="col-md-4">
@@ -55,7 +55,7 @@
                                     if(isset($_SESSION['login_failure'])){
                                         echo "<p style='color:red;'>
                                         <strong>Access Denied!</strong> *Either Username or Password is wrong!
-                                        </p>";
+                                        <small>Newly registered members must for Administrator's approval</small></p>";
                                         unset($_SESSION['login_failure']);
                                     }elseif(isset($_SESSION['username'])){
                                     echo "<p style='color:green;'>

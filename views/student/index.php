@@ -112,11 +112,11 @@ if (isset($_SESSION['username'])) {
                                     . '</div>';
                                     unset($_SESSION['success']);
                                 }
-                                elseif (isset($_SESSION['agree'])) {
-                                    echo '<div class="alert alert-info alert-dismissible" role="alert">'
+                                elseif (isset($_SESSION['date'])) {
+                                    echo '<div class="alert alert-danger alert-dismissible" role="alert">'
                                     . '<button type="button" class="close" data-dismiss="alert" aria-label="Close">'
                                             . '<span aria-hidden="true">&times;</span></button>'
-                                    . 'Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy '
+                                    . 'Sorry You are late. Submission is Closed'
                                     . '</div>';
                                     unset($_SESSION['agree']);
                                 }
