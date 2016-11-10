@@ -1,7 +1,6 @@
 <?php
 
 session_start();
-echo $_SESSION['faculty'];
 if (isset($_SESSION['username'])) {
     ?>
     <html>

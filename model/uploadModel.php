@@ -54,6 +54,8 @@ function saveData($target_file) {
     $DB_CONNECTION->close();
 }
 
+<<<<<<< HEAD
+=======
 function getSubmissionDate($academicYear){
     require '../config/config.php';
     global $submissionDate;
@@ -70,3 +72,4 @@ function getSubmissionDate($academicYear){
         $submissionDate = $row['close_date'];
     }
 }
+>>>>>>> 6f8b89084916f3359902921288a17f10768b8233
