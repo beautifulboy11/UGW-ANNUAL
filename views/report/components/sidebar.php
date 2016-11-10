@@ -31,9 +31,27 @@
                         </a>
                     </li>
                     <li>
-                        <a href="exceptionReport.php">
+                        <a href="generalReport.php">
                             <i class="fa fa-circle-o text-red"></i>
-                            <span>Exception Reports</span>
+                            <span>General Reports</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="facultyReport.php">
+                            <i class="fa fa-circle-o text-red"></i>
+                            <span>Faculty Reports</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contributor.php">
+                            <i class="fa fa-circle-o text-red"></i>
+                            <span>Contributor</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="generalReport.php">
+                            <i class="fa fa-circle-o text-red"></i>
+                            <span>Exception</span>
                         </a>
                     </li>
                 </ul>
